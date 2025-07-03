@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Sun className="h-8 w-8 text-solar-orange" />
-              <span className="text-xl font-bold">SolarTech Solutions</span>
+              <span className="text-xl font-bold">Solar Galaxy</span>
             </div>
             <p className="text-gray-400 mb-4">
               Professional solar installation and distribution services for residential and commercial properties.
@@ -62,13 +62,13 @@ export default function Footer() {
               <p>1234 Solar Ave</p>
               <p>Austin, TX 78701</p>
               <p>(555) 123-4567</p>
-              <p>info@solartechsolutions.com</p>
+              <p>info@solargalaxy.com</p>
             </div>
           </div>
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400">&copy; 2024 SolarTech Solutions. All rights reserved.</p>
+          <p className="text-gray-400">&copy; 2024 Solar Galaxy. All rights reserved.</p>
         </div>
       </div>
     </footer>

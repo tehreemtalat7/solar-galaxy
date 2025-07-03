@@ -1,4 +1,4 @@
-# SolarTech Solutions - Solar Business Website
+# Solar Galaxy - Solar Business Website
 
 ## Overview
 

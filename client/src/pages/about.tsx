@@ -11,7 +11,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              About SolarTech Solutions
+              About Solar Galaxy
             </h1>
             <p className="text-xl text-white">
               Leading the renewable energy revolution with professional solar installation and distribution services for over 15 years.
