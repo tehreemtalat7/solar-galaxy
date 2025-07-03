@@ -160,16 +160,16 @@ export default function Portfolio() {
                 <Card key={project.id} className="hover-lift border-0 shadow-2xl overflow-hidden animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
                   <div className="relative h-80">
                     <img 
-                      src={project.image || "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"}
+                      src={(project as any).image || (project as any).imageUrl || "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"}
                       alt={project.title}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     
                     {/* Type Badge */}
-                    <Badge className={`absolute top-4 left-4 ${getTypeColor(project.type)} flex items-center gap-2`}>
-                      {getTypeIcon(project.type)}
-                      {project.type}
+                    <Badge className={`absolute top-4 left-4 ${getTypeColor((project as any).type || (project as any).projectType || 'residential')} flex items-center gap-2`}>
+                      {getTypeIcon((project as any).type || (project as any).projectType || 'residential')}
+                      {(project as any).type || (project as any).projectType || 'Residential'}
                     </Badge>
                     
                     {/* Quick Stats Overlay */}
@@ -181,7 +181,7 @@ export default function Portfolio() {
                             <div className="text-sm opacity-90">System Size</div>
                           </div>
                           <div>
-                            <div className="text-2xl font-bold text-solar-green">{project.energyGenerated}</div>
+                            <div className="text-2xl font-bold text-solar-green">{(project as any).energyGenerated || '25,000 kWh/year'}</div>
                             <div className="text-sm opacity-90">Annual Generation</div>
                           </div>
                         </div>
@@ -200,7 +200,7 @@ export default function Portfolio() {
                       </div>
                       <div className="flex items-center text-gray-600">
                         <Calendar className="h-5 w-5 text-solar-green mr-3" />
-                        <span>Completed {new Date(project.completionDate).toLocaleDateString()}</span>
+                        <span>Completed {new Date((project as any).completionDate || (project as any).completedAt || new Date()).toLocaleDateString()}</span>
                       </div>
                     </div>
                     

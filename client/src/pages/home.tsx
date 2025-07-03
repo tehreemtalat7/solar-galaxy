@@ -89,7 +89,7 @@ export default function Home() {
             </div>
 
             {/* Stats Counter */}
-            <div className="grid grid-cols-3 gap-8 mt-16 animate-scale-in">
+            <div className="grid grid-cols-3 gap-8 mt-16">
               <div className="text-center">
                 <div className="text-4xl font-bold text-solar-orange mb-2">2,500+</div>
                 <div className="text-gray-300">Installations</div>
@@ -121,8 +121,10 @@ export default function Home() {
             <h2 className="text-5xl font-bold text-neutral-dark mb-6">
               Why Choose <span className="text-gradient">Solar Galaxy</span>?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Advanced technology, professional installation, and unmatched customer service
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We're Texas's leading solar installer with over 15 years of experience delivering 
+              advanced solar technology, professional installation, and unmatched customer service 
+              that has earned us a 98% customer satisfaction rate.
             </p>
           </div>
 
@@ -256,6 +258,84 @@ export default function Home() {
           </div>
         </section>
       )}
+
+      {/* Featured Projects Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+              Featured Projects
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See how we've transformed homes and businesses across Texas with cutting-edge solar solutions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Luxury Austin Estate",
+                type: "Residential",
+                size: "50kW",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                savings: "95% reduction"
+              },
+              {
+                title: "Dallas Office Complex",
+                type: "Commercial", 
+                size: "200kW",
+                image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                savings: "$15k/month"
+              },
+              {
+                title: "Houston Manufacturing",
+                type: "Industrial",
+                size: "500kW", 
+                image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                savings: "Carbon neutral"
+              }
+            ].map((project, index) => (
+              <Card key={index} className="hover-lift border-0 shadow-xl overflow-hidden animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+                <div className="relative h-48">
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <Badge className="absolute top-4 left-4 bg-solar-orange text-white">
+                    {project.type}
+                  </Badge>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <div className="text-2xl font-bold text-solar-green">{project.size}</div>
+                    <div className="text-sm opacity-90">System Size</div>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-neutral-dark mb-2">{project.title}</h3>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-600">Energy Savings:</span>
+                    <span className="font-semibold text-solar-orange">{project.savings}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button 
+              onClick={handleViewProjectsClick}
+              className="btn-modern hover-glow"
+              asChild
+            >
+              <Link href="/portfolio">
+                <Eye className="h-4 w-4 mr-2" />
+                View All Projects
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-solar-orange to-solar-green text-white">
