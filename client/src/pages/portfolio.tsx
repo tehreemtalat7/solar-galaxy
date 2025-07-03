@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { format } from "date-fns";
+import { Link } from "wouter";
 import type { Project } from "@shared/schema";
 
 export default function Portfolio() {

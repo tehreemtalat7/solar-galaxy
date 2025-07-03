@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -7,6 +7,15 @@ import { Menu, Sun } from "lucide-react";
 export default function Header() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -24,30 +33,49 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'glass backdrop-blur-lg bg-white/80 shadow-lg' 
+        : 'bg-transparent'
+    }`}>
+      <nav className="container-custom">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Sun className="h-8 w-8 text-solar-orange" />
-            <span className="text-xl font-bold text-neutral-dark">Solar Galaxy</span>
+          <Link href="/" className="flex items-center space-x-3 hover-lift">
+            <div className="relative">
+              <Sun className="h-10 w-10 text-solar-orange animate-float" />
+              <div className="absolute inset-0 bg-solar-orange/20 rounded-full blur-xl"></div>
+            </div>
+            <span className={`text-2xl font-bold transition-colors duration-300 ${
+              isScrolled ? 'text-neutral-dark' : 'text-white'
+            }`}>
+              Solar Galaxy
+            </span>
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href}>
-                <span className={`font-medium transition-colors hover:text-solar-orange ${
+                <span className={`relative font-medium transition-all duration-300 hover:scale-105 ${
                   isActive(item.href) 
-                    ? 'text-solar-orange' 
-                    : 'text-neutral-dark'
+                    ? isScrolled 
+                      ? 'text-solar-orange' 
+                      : 'text-solar-orange'
+                    : isScrolled 
+                      ? 'text-neutral-dark hover:text-solar-orange' 
+                      : 'text-white hover:text-solar-orange'
                 }`}>
                   {item.name}
+                  {isActive(item.href) && (
+                    <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-solar-orange to-solar-green rounded-full animate-scale-in"></div>
+                  )}
                 </span>
               </Link>
             ))}
+            
             <Button 
-              className="bg-solar-orange hover:bg-solar-orange-light text-white"
+              className="btn-modern hover-glow ml-4"
               asChild
             >
               <Link href="/quote">Get Quote</Link>
@@ -55,22 +83,28 @@ export default function Header() {
           </div>
           
           {/* Mobile Menu */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className={`hover-lift ${
+                    isScrolled ? 'text-neutral-dark' : 'text-white'
+                  }`}
+                >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
-                <div className="flex flex-col space-y-4 mt-8">
+              <SheetContent side="right" className="glass backdrop-blur-lg">
+                <div className="flex flex-col space-y-6 mt-12">
                   {navigation.map((item) => (
                     <Link 
                       key={item.name} 
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                     >
-                      <span className={`block font-medium py-2 transition-colors hover:text-solar-orange ${
+                      <span className={`block text-lg font-medium py-3 transition-all duration-300 hover:scale-105 hover:text-solar-orange ${
                         isActive(item.href) 
                           ? 'text-solar-orange' 
                           : 'text-neutral-dark'
@@ -79,8 +113,9 @@ export default function Header() {
                       </span>
                     </Link>
                   ))}
+                  
                   <Button 
-                    className="bg-solar-orange hover:bg-solar-orange-light text-white w-full mt-4"
+                    className="btn-modern w-full mt-6"
                     onClick={() => setIsOpen(false)}
                     asChild
                   >

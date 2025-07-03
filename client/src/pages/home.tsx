@@ -10,7 +10,13 @@ import {
   Eye,
   CheckCircle,
   ArrowRight,
-  Star
+  Star,
+  Zap,
+  Shield,
+  TrendingUp,
+  Sun,
+  Users,
+  Award
 } from "lucide-react";
 import { Link } from "wouter";
 import { trackEvent } from "@/lib/analytics";
@@ -34,220 +40,251 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-solar-green to-solar-green-light py-20">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" 
-             style={{backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')"}}></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Power Your Future with <span className="text-solar-orange">Solar Energy</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white mb-8">
-              Professional solar panel installation and distribution services. Join thousands of satisfied customers who've made the switch to clean, renewable energy.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    <div className="min-h-screen overflow-hidden">
+      {/* Modern Hero Section */}
+      <section className="relative h-screen flex items-center justify-center hero-parallax">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent"></div>
+        
+        {/* Floating particles animation */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-20 w-4 h-4 bg-white/20 rounded-full animate-float"></div>
+          <div className="absolute top-40 right-32 w-6 h-6 bg-solar-orange/30 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-32 left-40 w-3 h-3 bg-solar-green/40 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="max-w-6xl mx-auto text-center text-white">
+            <div className="animate-fade-in">
+              <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+                Power Your Future
+                <br />
+                <span className="text-gradient bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent">
+                  with Solar
+                </span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                Experience the future of energy with Solar Galaxy's cutting-edge solar solutions. 
+                Join thousands who've made the switch to clean, renewable power.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up">
               <Button 
-                size="lg" 
-                className="bg-solar-orange hover:bg-solar-orange-light text-white"
                 onClick={handleGetQuoteClick}
+                className="btn-modern text-lg px-12 py-6 hover-glow"
                 asChild
               >
-                <Link href="/quote">
-                  <Calculator className="mr-2 h-5 w-5" />
-                  Get Free Quote
-                </Link>
+                <Link href="/quote">Get Free Quote</Link>
               </Button>
+              
               <Button 
-                size="lg" 
-                variant="outline" 
-                className="bg-white text-solar-green hover:bg-gray-100"
                 onClick={handleViewProjectsClick}
+                variant="outline"
+                className="glass text-white border-white/30 hover:bg-white/10 text-lg px-12 py-6 hover-lift"
                 asChild
               >
-                <Link href="/portfolio">
-                  <Eye className="mr-2 h-5 w-5" />
-                  View Projects
-                </Link>
+                <Link href="/portfolio">View Projects</Link>
               </Button>
             </div>
+
+            {/* Stats Counter */}
+            <div className="grid grid-cols-3 gap-8 mt-16 animate-scale-in">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-solar-orange mb-2">2,500+</div>
+                <div className="text-gray-300">Installations</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-solar-green mb-2">15+</div>
+                <div className="text-gray-300">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-solar-orange mb-2">98%</div>
+                <div className="text-gray-300">Customer Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+              Why Choose <span className="text-gradient">Solar Galaxy</span>?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Advanced technology, professional installation, and unmatched customer service
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                icon: <Zap className="h-12 w-12" />,
+                title: "Advanced Technology",
+                description: "Latest solar panel technology with maximum efficiency and durability",
+                color: "text-solar-orange"
+              },
+              {
+                icon: <Shield className="h-12 w-12" />,
+                title: "25-Year Warranty",
+                description: "Comprehensive warranty coverage for complete peace of mind",
+                color: "text-solar-green"
+              },
+              {
+                icon: <TrendingUp className="h-12 w-12" />,
+                title: "Maximize Savings",
+                description: "Reduce your energy bills by up to 90% with our efficient systems",
+                color: "text-solar-orange"
+              }
+            ].map((feature, index) => (
+              <Card key={index} className="hover-lift border-0 shadow-lg animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+                <CardContent className="p-8 text-center">
+                  <div className={`${feature.color} mb-6 flex justify-center`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-neutral-dark mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 text-lg">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-neutral-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">Our Solar Solutions</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From consultation to installation, we provide comprehensive solar energy solutions for residential and commercial properties.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
-                <div className="text-solar-orange text-4xl mb-4">
-                  <HomeIcon className="h-12 w-12" />
-                </div>
-                <h3 className="text-xl font-semibold text-neutral-dark mb-4">Residential Solar</h3>
-                <p className="text-gray-600 mb-6">
-                  Complete solar solutions for homes, including rooftop installations, ground-mount systems, and battery storage options.
-                </p>
-                <Button variant="link" className="text-solar-orange hover:text-solar-orange-light p-0">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
-                <div className="text-solar-green text-4xl mb-4">
-                  <Building className="h-12 w-12" />
-                </div>
-                <h3 className="text-xl font-semibold text-neutral-dark mb-4">Commercial Solar</h3>
-                <p className="text-gray-600 mb-6">
-                  Large-scale solar installations for businesses, warehouses, and industrial facilities with customized energy solutions.
-                </p>
-                <Button variant="link" className="text-solar-green hover:text-solar-green-light p-0">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-            
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
-                <div className="text-solar-orange text-4xl mb-4">
-                  <Bolt className="h-12 w-12" />
-                </div>
-                <h3 className="text-xl font-semibold text-neutral-dark mb-4">Maintenance & Repair</h3>
-                <p className="text-gray-600 mb-6">
-                  Professional maintenance services to ensure your solar system operates at peak efficiency for years to come.
-                </p>
-                <Button variant="link" className="text-solar-orange hover:text-solar-orange-light p-0">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-          
-          {/* Net Metering Section */}
-          <Card className="mt-16">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-neutral-dark mb-4">Net Metering Benefits</h3>
-                  <p className="text-gray-600 mb-6">
-                    With net metering, you can sell excess solar energy back to the grid, reducing your electricity bills and maximizing your solar investment.
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <CheckCircle className="text-solar-green mr-3 h-5 w-5" />
-                      <span>Reduce monthly electricity costs</span>
+      <section className="section-padding bg-gradient-to-br from-neutral-light to-white">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-fade-in">
+              <h2 className="text-5xl font-bold text-neutral-dark mb-8">
+                Complete Solar Solutions
+              </h2>
+              <p className="text-xl text-gray-600 mb-12">
+                From residential rooftops to commercial installations, we provide end-to-end solar solutions tailored to your needs.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-8">
+                {[
+                  { icon: <HomeIcon className="h-8 w-8" />, title: "Residential", desc: "Perfect for homes" },
+                  { icon: <Building className="h-8 w-8" />, title: "Commercial", desc: "Scalable business solutions" },
+                  { icon: <Bolt className="h-8 w-8" />, title: "Battery Storage", desc: "Store excess energy" },
+                  { icon: <Calculator className="h-8 w-8" />, title: "Free Quotes", desc: "No obligation estimates" }
+                ].map((service, index) => (
+                  <div key={index} className="flex items-start space-x-4 hover-lift">
+                    <div className="text-solar-orange bg-orange-50 p-3 rounded-2xl">
+                      {service.icon}
                     </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="text-solar-green mr-3 h-5 w-5" />
-                      <span>Earn credits for excess energy production</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="text-solar-green mr-3 h-5 w-5" />
-                      <span>Contribute to grid stability</span>
+                    <div>
+                      <h4 className="font-semibold text-neutral-dark mb-1">{service.title}</h4>
+                      <p className="text-gray-600">{service.desc}</p>
                     </div>
                   </div>
-                </div>
-                <div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                    alt="Solar panels connected to electrical grid" 
-                    className="rounded-lg shadow-lg w-full h-auto"
-                  />
-                </div>
+                ))}
               </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+            </div>
 
-      {/* Recent Projects Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">Recent Projects</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore our latest solar installations across residential and commercial properties.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {projects?.slice(0, 3).map((project) => (
-              <Card key={project.id} className="hover:shadow-lg transition-shadow">
-                <div className="h-48 bg-gray-200 rounded-t-lg overflow-hidden">
-                  <img 
-                    src={project.imageUrl || "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400"} 
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-neutral-dark mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="flex justify-between items-center">
-                    <Badge variant="outline" className="text-solar-green">
-                      {project.systemSize}
-                    </Badge>
-                    <Button variant="link" className="text-solar-orange hover:text-solar-orange-light p-0">
-                      View Details
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button asChild className="bg-solar-green hover:bg-solar-green-light text-white">
-              <Link href="/portfolio">
-                View All Projects
-              </Link>
-            </Button>
+            <div className="relative animate-scale-in">
+              <div className="glass p-8 rounded-3xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Solar Installation"
+                  className="w-full h-80 object-cover rounded-2xl"
+                />
+              </div>
+              
+              {/* Floating stats */}
+              <div className="absolute -top-8 -right-8 glass p-6 rounded-2xl animate-float">
+                <div className="text-3xl font-bold text-solar-orange mb-2">$0</div>
+                <div className="text-sm text-gray-600">Down Payment</div>
+              </div>
+              
+              <div className="absolute -bottom-8 -left-8 glass p-6 rounded-2xl animate-float" style={{animationDelay: '2s'}}>
+                <div className="text-3xl font-bold text-solar-green mb-2">90%</div>
+                <div className="text-sm text-gray-600">Avg. Savings</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-neutral-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Read testimonials from satisfied customers who've made the switch to solar energy.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials?.slice(0, 3).map((testimonial) => (
-              <Card key={testimonial.id}>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <div className="flex text-solar-orange">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-current" />
+      {testimonials && testimonials.length > 0 && (
+        <section className="section-padding bg-neutral-dark text-white">
+          <div className="container-custom">
+            <div className="text-center mb-20 animate-fade-in">
+              <h2 className="text-5xl font-bold mb-6">
+                What Our Customers Say
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Join thousands of satisfied customers who've made the switch to solar
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.slice(0, 3).map((testimonial, index) => (
+                <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+                  <CardContent className="p-8">
+                    <div className="flex items-center mb-6">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                       ))}
                     </div>
-                  </div>
-                  <p className="text-gray-600 mb-6">"{testimonial.content}"</p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-                    <div>
-                      <div className="font-semibold text-neutral-dark">{testimonial.name}</div>
-                      <div className="text-sm text-gray-500">{testimonial.location}</div>
+                    <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                        {testimonial.name.charAt(0)}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white">{testimonial.name}</div>
+                        <div className="text-gray-400">{testimonial.location}</div>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* CTA Section */}
+      <section className="section-padding bg-gradient-to-r from-solar-orange to-solar-green text-white">
+        <div className="container-custom text-center">
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <h2 className="text-5xl font-bold mb-8">
+              Ready to Go Solar?
+            </h2>
+            <p className="text-xl mb-12 opacity-90">
+              Get your free solar quote today and start saving on your energy bills immediately
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button 
+                onClick={handleGetQuoteClick}
+                className="bg-white text-solar-orange hover:bg-gray-100 text-lg px-12 py-6 hover-lift"
+                asChild
+              >
+                <Link href="/quote">Get Free Quote</Link>
+              </Button>
+              
+              <Button 
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 text-lg px-12 py-6 hover-lift"
+                asChild
+              >
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
