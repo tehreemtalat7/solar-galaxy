@@ -325,7 +325,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Button 
               onClick={handleViewProjectsClick}
-              className="btn-modern hover-glow"
+              className="btn-modern hover-glow text-white"
               asChild
             >
               <Link href="/portfolio">
