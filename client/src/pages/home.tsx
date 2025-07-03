@@ -323,16 +323,12 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Button 
-              onClick={handleViewProjectsClick}
-              className="relative overflow-hidden bg-gradient-to-r from-solar-orange to-solar-green text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover-glow"
-              asChild
-            >
-              <Link href="/portfolio" className="flex items-center text-white">
-                <Eye className="h-4 w-4 mr-2" />
-                View All Projects
-              </Link>
-            </Button>
+            <Link href="/portfolio" onClick={handleViewProjectsClick}>
+              <button className="relative overflow-hidden bg-gradient-to-r from-solar-orange to-solar-green text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:scale-105 hover-glow inline-flex items-center">
+                <Eye className="h-4 w-4 mr-2 text-white" />
+                <span className="text-white">View All Projects</span>
+              </button>
+            </Link>
           </div>
         </div>
       </section>
