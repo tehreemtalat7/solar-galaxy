@@ -1,136 +1,172 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  Home, 
+  Home as HomeIcon, 
   Building, 
-  Bolt, 
   Battery, 
-  Zap, 
-  CheckCircle, 
+  Settings,
+  CheckCircle,
   ArrowRight,
+  Zap,
+  Shield,
+  TrendingUp,
+  Sun,
+  Clock,
+  Award,
   Calculator,
-  Shield
+  Users
 } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Services() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-solar-green to-solar-green-light">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Solar Services
-            </h1>
-            <p className="text-xl text-white">
-              Comprehensive solar energy solutions from consultation to installation and ongoing maintenance.
-            </p>
+      <section className="section-padding bg-gradient-to-br from-neutral-dark via-neutral-dark/90 to-neutral-dark text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-32 left-32 w-40 h-40 bg-solar-orange/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-40 right-20 w-60 h-60 bg-solar-green/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+        </div>
+        
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="animate-fade-in">
+              <h1 className="text-6xl md:text-7xl font-bold mb-8">
+                Solar <span className="text-gradient">Services</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">
+                Comprehensive solar solutions for every need. From residential rooftops to 
+                large commercial installations, we deliver excellence at every scale.
+              </p>
+              
+              <Button 
+                className="btn-modern text-lg px-12 py-6 hover-glow"
+                asChild
+              >
+                <Link href="/quote">Get Free Assessment</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Main Services */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
-                <div className="text-solar-orange text-4xl mb-4">
-                  <Home className="h-12 w-12" />
+      {/* Main Services Grid */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+              Complete Solar Solutions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Expert installation, premium equipment, and ongoing support for all your solar energy needs
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Residential Solar */}
+            <Card className="hover-lift border-0 shadow-2xl overflow-hidden animate-slide-up">
+              <div className="relative h-64">
+                <img 
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Residential Solar Installation"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <Badge className="absolute top-4 left-4 bg-solar-orange text-white">Most Popular</Badge>
+              </div>
+              <CardContent className="p-10">
+                <div className="flex items-center mb-6">
+                  <div className="bg-solar-orange text-white rounded-2xl w-16 h-16 flex items-center justify-center mr-6">
+                    <HomeIcon className="h-8 w-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-neutral-dark">Residential Solar</h3>
+                    <p className="text-solar-orange font-semibold">For Homeowners</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-dark mb-4">Residential Solar</h3>
-                <p className="text-gray-600 mb-6">
-                  Complete solar solutions for homes, including rooftop installations, ground-mount systems, and battery storage options.
+                
+                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                  Transform your home into a clean energy powerhouse. Our residential solar systems 
+                  are designed to maximize savings while enhancing your property value.
                 </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Rooftop installations
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Ground-mount systems
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Battery storage options
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Net metering setup
-                  </li>
-                </ul>
-                <Button className="bg-solar-orange hover:bg-solar-orange-light text-white w-full">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                
+                <div className="space-y-4 mb-8">
+                  {[
+                    "Custom roof design & engineering",
+                    "High-efficiency solar panels",
+                    "25-year performance warranty",
+                    "Net metering setup",
+                    "Smart monitoring system"
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-solar-orange mr-3" />
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button className="btn-modern flex-1" asChild>
+                    <Link href="/quote">Get Quote</Link>
+                  </Button>
+                  <Button variant="outline" className="flex-1 hover-lift">
+                    Learn More
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
-                <div className="text-solar-green text-4xl mb-4">
-                  <Building className="h-12 w-12" />
+            {/* Commercial Solar */}
+            <Card className="hover-lift border-0 shadow-2xl overflow-hidden animate-slide-up" style={{animationDelay: '0.2s'}}>
+              <div className="relative h-64">
+                <img 
+                  src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Commercial Solar Installation"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <Badge className="absolute top-4 left-4 bg-solar-green text-white">Enterprise</Badge>
+              </div>
+              <CardContent className="p-10">
+                <div className="flex items-center mb-6">
+                  <div className="bg-solar-green text-white rounded-2xl w-16 h-16 flex items-center justify-center mr-6">
+                    <Building className="h-8 w-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-neutral-dark">Commercial Solar</h3>
+                    <p className="text-solar-green font-semibold">For Businesses</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-dark mb-4">Commercial Solar</h3>
-                <p className="text-gray-600 mb-6">
-                  Large-scale solar installations for businesses, warehouses, and industrial facilities with customized energy solutions.
+                
+                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                  Reduce operational costs and demonstrate environmental leadership. Our commercial 
+                  solutions scale from small businesses to large industrial facilities.
                 </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Large-scale installations
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Custom energy solutions
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Commercial financing
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Energy management systems
-                  </li>
-                </ul>
-                <Button className="bg-solar-green hover:bg-solar-green-light text-white w-full">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-8">
-                <div className="text-solar-orange text-4xl mb-4">
-                  <Bolt className="h-12 w-12" />
+                
+                <div className="space-y-4 mb-8">
+                  {[
+                    "Comprehensive energy assessment",
+                    "Scalable system design",
+                    "Tax incentive optimization",
+                    "Power purchase agreements",
+                    "24/7 performance monitoring"
+                  ].map((feature, index) => (
+                    <div key={index} className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-solar-green mr-3" />
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-dark mb-4">Maintenance & Repair</h3>
-                <p className="text-gray-600 mb-6">
-                  Professional maintenance services to ensure your solar system operates at peak efficiency for years to come.
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Regular inspections
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Panel cleaning
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    System monitoring
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-solar-green mr-2" />
-                    Emergency repairs
-                  </li>
-                </ul>
-                <Button className="bg-solar-orange hover:bg-solar-orange-light text-white w-full">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button className="btn-modern flex-1" asChild>
+                    <Link href="/quote">Get Quote</Link>
+                  </Button>
+                  <Button variant="outline" className="flex-1 hover-lift">
+                    Learn More
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -138,178 +174,140 @@ export default function Services() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 bg-neutral-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">Additional Services</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We offer a complete range of solar-related services to meet all your energy needs.
+      <section className="section-padding bg-gradient-to-br from-neutral-light to-white">
+        <div className="container-custom">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+              Additional Services
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive solutions to maximize your solar investment
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-green mb-4">
-                  <Battery className="h-10 w-10 mx-auto" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Battery Storage</h3>
-                <p className="text-gray-600 text-sm">
-                  Store excess energy for use during peak hours or power outages.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-orange mb-4">
-                  <Zap className="h-10 w-10 mx-auto" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Smart Inverters</h3>
-                <p className="text-gray-600 text-sm">
-                  Advanced inverters with monitoring and grid-tie capabilities.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-green mb-4">
-                  <Calculator className="h-10 w-10 mx-auto" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Energy Audits</h3>
-                <p className="text-gray-600 text-sm">
-                  Comprehensive analysis of your energy usage and solar potential.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-orange mb-4">
-                  <Shield className="h-10 w-10 mx-auto" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Warranty Support</h3>
-                <p className="text-gray-600 text-sm">
-                  Comprehensive warranty coverage and ongoing support services.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Net Metering Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <Badge className="mb-4 bg-solar-green text-white">Net Metering</Badge>
-                    <h3 className="text-2xl font-bold text-neutral-dark mb-4">Maximize Your Solar Investment</h3>
-                    <p className="text-gray-600 mb-6">
-                      With net metering, you can sell excess solar energy back to the grid, reducing your electricity bills and maximizing your solar investment.
-                    </p>
-                    <div className="space-y-3">
-                      <div className="flex items-center">
-                        <CheckCircle className="text-solar-green mr-3 h-5 w-5" />
-                        <span>Reduce monthly electricity costs</span>
-                      </div>
-                      <div className="flex items-center">
-                        <CheckCircle className="text-solar-green mr-3 h-5 w-5" />
-                        <span>Earn credits for excess energy production</span>
-                      </div>
-                      <div className="flex items-center">
-                        <CheckCircle className="text-solar-green mr-3 h-5 w-5" />
-                        <span>Contribute to grid stability</span>
-                      </div>
-                    </div>
+            {[
+              {
+                icon: <Battery className="h-12 w-12" />,
+                title: "Battery Storage",
+                description: "Store excess energy for use during peak hours or power outages",
+                color: "text-solar-orange"
+              },
+              {
+                icon: <Settings className="h-12 w-12" />,
+                title: "Maintenance",
+                description: "Professional cleaning, inspection, and performance optimization",
+                color: "text-solar-green"
+              },
+              {
+                icon: <Calculator className="h-12 w-12" />,
+                title: "Financing",
+                description: "Flexible payment options including $0 down solar loans",
+                color: "text-solar-orange"
+              },
+              {
+                icon: <Award className="h-12 w-12" />,
+                title: "Warranty",
+                description: "Comprehensive 25-year warranty on equipment and workmanship",
+                color: "text-solar-green"
+              }
+            ].map((service, index) => (
+              <Card key={index} className="hover-lift border-0 shadow-lg animate-slide-up text-center" style={{animationDelay: `${index * 0.1}s`}}>
+                <CardContent className="p-8">
+                  <div className={`${service.color} mb-6 flex justify-center`}>
+                    {service.icon}
                   </div>
-                  <div>
-                    <img 
-                      src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                      alt="Solar panels connected to electrical grid" 
-                      className="rounded-lg shadow-lg w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <h3 className="text-xl font-bold text-neutral-dark mb-4">{service.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-neutral-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">Our Process</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From initial consultation to final installation, we make going solar simple and stress-free.
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+              Our Installation Process
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From initial consultation to system activation, we make going solar simple
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-solar-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">1</span>
+            {[
+              {
+                step: "01",
+                title: "Consultation",
+                description: "Free energy assessment and custom system design",
+                icon: <Users className="h-8 w-8" />
+              },
+              {
+                step: "02", 
+                title: "Permitting",
+                description: "We handle all permits and utility interconnection",
+                icon: <CheckCircle className="h-8 w-8" />
+              },
+              {
+                step: "03",
+                title: "Installation",
+                description: "Professional installation by certified technicians",
+                icon: <Settings className="h-8 w-8" />
+              },
+              {
+                step: "04",
+                title: "Activation",
+                description: "System testing, monitoring setup, and activation",
+                icon: <Zap className="h-8 w-8" />
+              }
+            ].map((step, index) => (
+              <div key={index} className="text-center animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+                <div className="relative mb-8">
+                  <div className="glass w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-4 hover-lift">
+                    <div className="text-solar-orange">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white text-sm font-bold">
+                    {step.step}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-neutral-dark mb-4">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
               </div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-2">Consultation</h3>
-              <p className="text-gray-600 text-sm">
-                We assess your energy needs and evaluate your property's solar potential.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-solar-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">2</span>
-              </div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-2">Design</h3>
-              <p className="text-gray-600 text-sm">
-                Our engineers create a custom solar system design optimized for your property.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-solar-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">3</span>
-              </div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-2">Installation</h3>
-              <p className="text-gray-600 text-sm">
-                Our certified technicians professionally install your solar system.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-16 h-16 bg-solar-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">4</span>
-              </div>
-              <h3 className="text-lg font-semibold text-neutral-dark mb-2">Activation</h3>
-              <p className="text-gray-600 text-sm">
-                We handle all inspections and utility connections to get your system running.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-solar-orange to-solar-orange-light">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Get Started?
+      <section className="section-padding bg-gradient-to-r from-solar-orange to-solar-green text-white">
+        <div className="container-custom text-center">
+          <div className="max-w-4xl mx-auto animate-fade-in">
+            <h2 className="text-5xl font-bold mb-8">
+              Ready to Start Your Solar Journey?
             </h2>
-            <p className="text-xl text-white mb-8">
-              Let us help you harness the power of the sun and start saving on your energy bills today.
+            <p className="text-xl mb-12 opacity-90">
+              Get a free, no-obligation assessment and see how much you can save with solar
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="outline" className="bg-white text-solar-orange hover:bg-gray-100" asChild>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button 
+                className="bg-white text-solar-orange hover:bg-gray-100 text-lg px-12 py-6 hover-lift"
+                asChild
+              >
                 <Link href="/quote">Get Free Quote</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-white text-solar-orange hover:bg-gray-100" asChild>
+              
+              <Button 
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 text-lg px-12 py-6 hover-lift"
+                asChild
+              >
                 <Link href="/contact">Schedule Consultation</Link>
               </Button>
             </div>
