@@ -105,7 +105,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-20 animate-fade-in">
             <h2 className="text-5xl font-bold text-neutral-dark mb-6">
-              Why Choose <span className="bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent font-bold">Solar Galaxy</span>?
+              Why Choose <span className="text-solar-orange font-bold">Solar Galaxy</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               We're Texas's leading solar installer with over 15 years of experience delivering 
