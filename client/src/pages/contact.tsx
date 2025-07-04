@@ -194,7 +194,7 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="(555) 123-4567"
+                        placeholder="0333 1234567"
                       />
                     </div>
                     
@@ -261,7 +261,7 @@ export default function Contact() {
                     </div>
                     <div className="flex justify-between">
                       <span>Emergency Line:</span>
-                      <span>(555) 123-4567</span>
+                      <span>0333 4214007</span>
                     </div>
                     <div className="text-gray-600 text-xs mt-2">
                       For urgent system issues only
