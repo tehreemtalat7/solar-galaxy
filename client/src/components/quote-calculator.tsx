@@ -37,30 +37,30 @@ export default function QuoteCalculator({ onQuoteCalculated }: QuoteCalculatorPr
     let monthlySavings = 0;
 
     switch(monthlyBill) {
-      case '50-100':
+      case '15000-25000':
         systemSize = 4.5;
-        estimatedCost = 11250;
-        monthlySavings = 75;
+        estimatedCost = 3200000; // PKR 3.2M
+        monthlySavings = 20000; // PKR 20,000
         break;
-      case '100-150':
+      case '25000-40000':
         systemSize = 6.5;
-        estimatedCost = 16250;
-        monthlySavings = 110;
+        estimatedCost = 4600000; // PKR 4.6M
+        monthlySavings = 30000; // PKR 30,000
         break;
-      case '150-200':
+      case '40000-60000':
         systemSize = 8.5;
-        estimatedCost = 21250;
-        monthlySavings = 145;
+        estimatedCost = 6000000; // PKR 6M
+        monthlySavings = 40000; // PKR 40,000
         break;
-      case '200-300':
+      case '60000-85000':
         systemSize = 12;
-        estimatedCost = 30000;
-        monthlySavings = 200;
+        estimatedCost = 8500000; // PKR 8.5M
+        monthlySavings = 55000; // PKR 55,000
         break;
-      case '300+':
+      case '85000+':
         systemSize = 15;
-        estimatedCost = 37500;
-        monthlySavings = 275;
+        estimatedCost = 10600000; // PKR 10.6M
+        monthlySavings = 75000; // PKR 75,000
         break;
     }
 
@@ -93,11 +93,11 @@ export default function QuoteCalculator({ onQuoteCalculated }: QuoteCalculatorPr
               <SelectValue placeholder="Select Bill Range" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="50-100">$50 - $100</SelectItem>
-              <SelectItem value="100-150">$100 - $150</SelectItem>
-              <SelectItem value="150-200">$150 - $200</SelectItem>
-              <SelectItem value="200-300">$200 - $300</SelectItem>
-              <SelectItem value="300+">$300+</SelectItem>
+              <SelectItem value="15000-25000">PKR 15,000 - 25,000</SelectItem>
+              <SelectItem value="25000-40000">PKR 25,000 - 40,000</SelectItem>
+              <SelectItem value="40000-60000">PKR 40,000 - 60,000</SelectItem>
+              <SelectItem value="60000-85000">PKR 60,000 - 85,000</SelectItem>
+              <SelectItem value="85000+">PKR 85,000+</SelectItem>
             </SelectContent>
           </Select>
         </div>
