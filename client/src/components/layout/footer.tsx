@@ -58,10 +58,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <p>17- H BLOCK, COMMERCIAL AREA</p>
-              <p>DHA PHASE, LAHORE</p>
+              <p>17-H Block, Commercial Area</p>
+              <p>DHA Phase, Lahore</p>
               <p>+92 42 123-4567</p>
-              <p>info@solargalaxy.com</p>
+              <p>solargalaxy.co@gmail.com</p>
             </div>
           </div>
         </div>

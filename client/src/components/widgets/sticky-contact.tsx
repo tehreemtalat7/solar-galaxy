@@ -52,7 +52,7 @@ export default function StickyContact() {
           onClick={handleEmailClick}
           style={{animationDelay: '2s'}}
         >
-          <a href="mailto:info@solargalaxy.com">
+          <a href="mailto:solargalaxy.co@gmail.com">
             <Mail className="h-6 w-6" />
           </a>
         </Button>

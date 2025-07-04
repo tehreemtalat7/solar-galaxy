@@ -118,7 +118,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-neutral-dark">Email</div>
-                    <div className="text-gray-600">info@solartechsolutions.com</div>
+                    <div className="text-gray-600">solargalaxy.co@gmail.com</div>
                   </div>
                 </div>
                 
@@ -128,7 +128,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-neutral-dark">Address</div>
-                    <div className="text-gray-600">17- H BLOCK, COMMERCIAL AREA DHA PHASE, LAHORE</div>
+                    <div className="text-gray-600">17-H Block, Commercial Area DHA Phase, Lahore</div>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function Contact() {
                   <div className="text-center">
                     <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600">Interactive Google Map</p>
-                    <p className="text-sm text-gray-500">17- H BLOCK, COMMERCIAL AREA DHA PHASE, LAHORE</p>
+                    <p className="text-sm text-gray-500">17-H Block, Commercial Area DHA Phase, Lahore</p>
                   </div>
                 </div>
               </div>
