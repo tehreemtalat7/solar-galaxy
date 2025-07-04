@@ -89,8 +89,8 @@ export default function Header() {
                 <Button 
                   variant="ghost" 
                   size="icon"
-                  className={`hover-lift ${
-                    isScrolled ? 'text-neutral-dark' : 'text-white'
+                  className={`hover-lift transition-colors ${
+                    isScrolled ? 'text-neutral-dark hover:text-solar-orange' : 'text-white hover:text-solar-orange'
                   }`}
                 >
                   <Menu className="h-6 w-6" />
