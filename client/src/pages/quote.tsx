@@ -156,7 +156,14 @@ export default function Quote() {
     e.preventDefault();
     
     try {
-      const validatedData = quoteFormSchema.parse(formData);
+      // Remove empty calculated fields before submission
+      const submitData = { ...formData };
+      if (!submitData.systemSize) delete submitData.systemSize;
+      if (!submitData.estimatedCost) delete submitData.estimatedCost;
+      if (!submitData.monthlySavings) delete submitData.monthlySavings;
+      if (!submitData.paybackPeriod) delete submitData.paybackPeriod;
+      
+      const validatedData = quoteFormSchema.parse(submitData);
       submitQuoteMutation.mutate(validatedData);
     } catch (error) {
       if (error instanceof z.ZodError) {

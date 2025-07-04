@@ -124,7 +124,12 @@ export const blogPostsRelations = relations(blogPosts, ({ one }) => ({
 // Insert schemas
 export const insertUserSchema = createInsertSchema(users);
 export const insertTestimonialSchema = createInsertSchema(testimonials);
-export const insertQuoteSchema = createInsertSchema(quotes);
+export const insertQuoteSchema = createInsertSchema(quotes).extend({
+  systemSize: z.string().optional(),
+  estimatedCost: z.string().optional(), 
+  monthlySavings: z.string().optional(),
+  paybackPeriod: z.string().optional(),
+});
 export const insertBlogPostSchema = createInsertSchema(blogPosts);
 export const insertProjectSchema = createInsertSchema(projects);
 export const insertContactSubmissionSchema = createInsertSchema(contactSubmissions);
