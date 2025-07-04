@@ -218,10 +218,10 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-solar-orange scrollbar-track-white/10 pr-4">
-              <div className="grid md:grid-cols-3 gap-8">
+            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-solar-orange scrollbar-track-white/10 pb-4">
+              <div className="flex gap-8 min-w-max">
                 {testimonials.map((testimonial, index) => (
-                  <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+                  <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up flex-shrink-0 w-80" style={{animationDelay: `${index * 0.2}s`}}>
                     <CardContent className="p-8">
                       <div className="flex items-center mb-6">
                         {[...Array(testimonial.rating || 5)].map((_, i) => (
