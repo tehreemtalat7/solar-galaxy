@@ -26,7 +26,7 @@ export default function StickyContact() {
           size="icon"
           onClick={handleCallClick}
         >
-          <a href="tel:03334214007">
+          <a href="tel:+923334214007">
             <Phone className="h-6 w-6" />
           </a>
         </Button>
