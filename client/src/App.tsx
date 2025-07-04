@@ -16,6 +16,7 @@ import Portfolio from "@/pages/portfolio";
 import Blog from "@/pages/blog";
 import Contact from "@/pages/contact";
 import Quote from "@/pages/quote";
+import NetMetering from "@/pages/net-metering";
 import Admin from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 
@@ -41,6 +42,7 @@ function Router() {
           <Route path="/blog" component={Blog} />
           <Route path="/contact" component={Contact} />
           <Route path="/quote" component={Quote} />
+          <Route path="/net-metering" component={NetMetering} />
           <Route path="/admin" component={Admin} />
           <Route component={NotFound} />
         </Switch>

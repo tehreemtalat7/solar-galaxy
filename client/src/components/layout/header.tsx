@@ -22,6 +22,7 @@ export default function Header() {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Net Metering", href: "/net-metering" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
@@ -32,7 +33,7 @@ export default function Header() {
     return false;
   };
 
-  const isWhiteHeaderPage = location === "/about" || location === "/services" || location === "/portfolio";
+  const isWhiteHeaderPage = location === "/about" || location === "/services" || location === "/portfolio" || location === "/net-metering";
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
