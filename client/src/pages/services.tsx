@@ -33,7 +33,7 @@ export default function Services() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
               <h1 className="text-6xl md:text-7xl font-bold mb-8">
-                Solar <span className="text-gradient">Services</span>
+                Solar <span className="bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent font-extrabold">Services</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">
                 Comprehensive solar solutions for every need. From residential rooftops to 
