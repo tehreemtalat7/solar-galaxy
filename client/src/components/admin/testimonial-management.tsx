@@ -219,7 +219,7 @@ export default function TestimonialManagement() {
                     id="location"
                     value={formData.location}
                     onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-                    placeholder="e.g., Austin, TX"
+                    placeholder="e.g., Lahore, Pakistan"
                   />
                 </div>
               </div>

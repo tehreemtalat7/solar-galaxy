@@ -59,9 +59,9 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <p>1234 Solar Ave</p>
-              <p>Austin, TX 78701</p>
-              <p>(555) 123-4567</p>
+              <p>123 Ferozepur Road</p>
+              <p>Lahore, Punjab 54000</p>
+              <p>+92 42 123-4567</p>
               <p>info@solargalaxy.com</p>
             </div>
           </div>

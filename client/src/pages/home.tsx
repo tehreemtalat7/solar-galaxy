@@ -108,7 +108,7 @@ export default function Home() {
               Why Choose <span className="text-solar-orange font-bold">Solar Galaxy</span>?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We're Texas's leading solar installer with over 15 years of experience delivering 
+              We're Lahore's leading solar installer with over 15 years of experience delivering 
               advanced solar technology, professional installation, and unmatched customer service 
               that has earned us a 98% customer satisfaction rate.
             </p>
@@ -335,28 +335,28 @@ export default function Home() {
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how we've transformed homes and businesses across Texas with cutting-edge solar solutions
+              See how we've transformed homes and businesses across Pakistan with cutting-edge solar solutions
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Luxury Austin Estate",
+                title: "Luxury Lahore Estate",
                 type: "Residential",
                 size: "50kW",
                 image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 savings: "95% reduction"
               },
               {
-                title: "Dallas Office Complex",
+                title: "Karachi Office Complex",
                 type: "Commercial", 
                 size: "200kW",
                 image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                savings: "$15k/month"
+                savings: "PKR 1.5M/month"
               },
               {
-                title: "Houston Manufacturing",
+                title: "Islamabad Manufacturing",
                 type: "Industrial",
                 size: "500kW", 
                 image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
