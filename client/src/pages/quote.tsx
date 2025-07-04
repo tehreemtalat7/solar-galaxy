@@ -297,10 +297,15 @@ export default function Quote() {
                         <SelectValue placeholder="Select Roof Type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="asphalt">Asphalt Shingle</SelectItem>
-                        <SelectItem value="metal">Metal</SelectItem>
-                        <SelectItem value="tile">Tile</SelectItem>
-                        <SelectItem value="flat">Flat</SelectItem>
+                        <SelectItem value="flat-concrete">Flat Concrete (RCC)</SelectItem>
+                        <SelectItem value="sloped-concrete">Sloped Concrete</SelectItem>
+                        <SelectItem value="clay-tile">Clay Tile</SelectItem>
+                        <SelectItem value="metal-sheet">Metal Sheet (Galvanized)</SelectItem>
+                        <SelectItem value="asbestos">Asbestos Sheet</SelectItem>
+                        <SelectItem value="tin-sheet">Tin Sheet</SelectItem>
+                        <SelectItem value="concrete-tile">Concrete Tile</SelectItem>
+                        <SelectItem value="brick-terrace">Brick Terrace</SelectItem>
+                        <SelectItem value="shed-roof">Shed Roof (Industrial)</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
