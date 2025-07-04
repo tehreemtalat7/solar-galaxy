@@ -32,11 +32,15 @@ export default function Header() {
     return false;
   };
 
+  const isAboutPage = location === "/about";
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'glass backdrop-blur-lg bg-white/80 shadow-lg' 
-        : 'bg-transparent'
+      isAboutPage 
+        ? 'glass backdrop-blur-lg bg-white/90 shadow-lg' 
+        : isScrolled 
+          ? 'glass backdrop-blur-lg bg-white/80 shadow-lg' 
+          : 'bg-transparent'
     }`}>
       <nav className="container-custom">
         <div className="flex items-center justify-between py-4">
@@ -47,7 +51,7 @@ export default function Header() {
               <div className="absolute inset-0 bg-solar-orange/20 rounded-full blur-xl"></div>
             </div>
             <span className={`text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-neutral-dark' : 'text-white'
+              isAboutPage || isScrolled ? 'text-neutral-dark' : 'text-white'
             }`}>
               Solar Galaxy
             </span>
@@ -59,10 +63,8 @@ export default function Header() {
               <Link key={item.name} href={item.href}>
                 <span className={`relative font-medium transition-all duration-300 hover:scale-105 ${
                   isActive(item.href) 
-                    ? isScrolled 
-                      ? 'text-solar-orange' 
-                      : 'text-solar-orange'
-                    : isScrolled 
+                    ? 'text-solar-orange'
+                    : (isAboutPage || isScrolled)
                       ? 'text-neutral-dark hover:text-solar-orange' 
                       : 'text-white hover:text-solar-orange'
                 }`}>
@@ -90,7 +92,7 @@ export default function Header() {
                   variant="ghost" 
                   size="icon"
                   className={`hover-lift transition-colors ${
-                    isScrolled ? 'text-neutral-dark hover:text-solar-orange' : 'text-white hover:text-solar-orange'
+                    (isAboutPage || isScrolled) ? 'text-neutral-dark hover:text-solar-orange' : 'text-white hover:text-solar-orange'
                   }`}
                 >
                   <Menu className="h-6 w-6" />
