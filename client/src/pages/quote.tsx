@@ -41,10 +41,10 @@ export default function Quote() {
     monthlyBill: "",
     homeSize: undefined,
     roofType: "",
-    systemSize: undefined,
-    estimatedCost: undefined,
-    monthlySavings: undefined,
-    paybackPeriod: undefined,
+    systemSize: "",
+    estimatedCost: "",
+    monthlySavings: "",
+    paybackPeriod: "",
   });
   
   const [quoteResults, setQuoteResults] = useState<QuoteResults | null>(null);
@@ -70,10 +70,10 @@ export default function Quote() {
         monthlyBill: "",
         homeSize: undefined,
         roofType: "",
-        systemSize: undefined,
-        estimatedCost: undefined,
-        monthlySavings: undefined,
-        paybackPeriod: undefined,
+        systemSize: "",
+        estimatedCost: "",
+        monthlySavings: "",
+        paybackPeriod: "",
       });
       setShowResults(false);
       setQuoteResults(null);
@@ -144,10 +144,10 @@ export default function Quote() {
     setQuoteResults(results);
     setFormData(prev => ({
       ...prev,
-      systemSize: systemSize,
-      estimatedCost: estimatedCost,
-      monthlySavings: monthlySavings,
-      paybackPeriod: paybackPeriod,
+      systemSize: systemSize.toString(),
+      estimatedCost: estimatedCost.toString(),
+      monthlySavings: monthlySavings.toString(),
+      paybackPeriod: paybackPeriod.toString(),
     }));
     setShowResults(true);
   };
