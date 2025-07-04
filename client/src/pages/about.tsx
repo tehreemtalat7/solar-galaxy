@@ -17,7 +17,7 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
               <h1 className="text-6xl md:text-7xl font-bold mb-8">
-                About <span className="text-solar-orange">Solar Galaxy</span>
+                About <span className="bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent font-extrabold">Solar Galaxy</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
                 Leading the renewable energy revolution with professional solar installation 
