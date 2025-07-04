@@ -41,7 +41,7 @@ export default function NetMetering() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-solar-orange text-lg px-8 py-6"
+                className="border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-solar-orange text-lg px-8 py-6"
                 asChild
               >
                 <Link href="/contact">Apply for Net Metering</Link>
@@ -481,7 +481,7 @@ export default function NetMetering() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white hover:text-solar-orange text-lg px-8 py-6"
+                className="border-white text-white bg-white/10 backdrop-blur-sm hover:bg-white hover:text-solar-orange text-lg px-8 py-6"
                 asChild
               >
                 <Link href="/contact">Contact Our Experts</Link>
