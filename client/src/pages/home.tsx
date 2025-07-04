@@ -69,22 +69,13 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up">
+            <div className="flex justify-center animate-slide-up">
               <Button 
                 onClick={handleGetQuoteClick}
                 className="btn-modern text-lg px-12 py-6 hover-glow"
                 asChild
               >
                 <Link href="/quote">Get Free Quote</Link>
-              </Button>
-              
-              <Button 
-                onClick={handleViewProjectsClick}
-                variant="outline"
-                className="glass text-white border-white/30 hover:bg-white/10 text-lg px-12 py-6 hover-lift"
-                asChild
-              >
-                <Link href="/portfolio">View Projects</Link>
               </Button>
             </div>
 
