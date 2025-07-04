@@ -250,10 +250,10 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-20 animate-fade-in">
             <h2 className="text-5xl font-bold text-neutral-dark mb-6">
-              Powered by <span className="text-solar-orange font-bold">Solax Power</span>
+              Powered by <span className="text-solar-orange font-bold">SolarMax</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're proud to be an authorized distributor of Solax Power's industry-leading solar panels and energy storage solutions, delivering maximum efficiency and reliability for Texas homes and businesses.
+              We're proud to be an authorized distributor of SolarMax's premium solar panels, inverters, and energy storage solutions. Since 2007, SolarMax has been Pakistan's leading renewable energy brand, delivering maximum efficiency and reliability for homes and businesses.
             </p>
           </div>
 
@@ -262,7 +262,7 @@ export default function Home() {
               <div className="glass p-8 rounded-3xl">
                 <img 
                   src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Solax Power Solar Panels Installation"
+                  alt="SolarMax Solar Panels Installation"
                   className="w-full h-80 object-cover rounded-2xl"
                 />
               </div>
@@ -270,27 +270,27 @@ export default function Home() {
 
             <div className="animate-slide-up">
               <div className="mb-8">
-                <h3 className="text-3xl font-bold text-neutral-dark mb-4">Why Solax Power?</h3>
+                <h3 className="text-3xl font-bold text-neutral-dark mb-4">Why SolarMax?</h3>
                 <p className="text-gray-600 text-lg mb-6">
-                  As a leading global manufacturer, Solax Power combines cutting-edge technology with proven reliability, making them our trusted partner for premium solar solutions.
+                  As Pakistan's premier renewable energy company with 16+ years of experience, SolarMax combines proven technology with exceptional service, making them our trusted partner for complete solar solutions.
                 </p>
               </div>
 
               <div className="space-y-6">
                 {[
                   {
-                    title: "Industry-Leading Efficiency",
-                    description: "Up to 22.8% panel efficiency with advanced PERC cell technology",
+                    title: "100% Performance Guarantee",
+                    description: "Highly efficient panels delivering maximum solar production year-round",
                     icon: <Zap className="h-6 w-6" />
                   },
                   {
-                    title: "25-Year Performance Warranty",
-                    description: "Guaranteed power output with comprehensive warranty coverage",
+                    title: "Complete Solar Solutions",
+                    description: "One-stop solution for panels, inverters, batteries, and installation",
                     icon: <Shield className="h-6 w-6" />
                   },
                   {
-                    title: "Weather Resilient Design",
-                    description: "Built to withstand Texas weather with superior durability ratings",
+                    title: "Proven Track Record",
+                    description: "32,000+ satisfied customers across 6 countries since 2007",
                     icon: <TrendingUp className="h-6 w-6" />
                   }
                 ].map((feature, index) => (
@@ -311,10 +311,10 @@ export default function Home() {
           {/* Technology Stats */}
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { stat: "22.8%", label: "Peak Efficiency" },
-              { stat: "25 Years", label: "Product Warranty" },
-              { stat: "2400 Pa", label: "Snow Load Rating" },
-              { stat: "IP68", label: "Weather Protection" }
+              { stat: "16+", label: "Years Experience" },
+              { stat: "32,000+", label: "Happy Customers" },
+              { stat: "6+", label: "Countries Served" },
+              { stat: "100%", label: "Performance Rated" }
             ].map((item, index) => (
               <div key={index} className="animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="glass p-6 rounded-2xl hover-lift">
