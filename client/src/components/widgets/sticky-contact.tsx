@@ -2,8 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { useLocation } from "wouter";
 
 export default function StickyContact() {
+  const [location] = useLocation();
+  
+  // Don't show sticky contact buttons on admin page
+  if (location === '/admin') {
+    return null;
+  }
   const handleCallClick = () => {
     trackEvent('call_button_clicked', 'engagement', 'sticky_contact');
   };
