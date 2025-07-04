@@ -245,6 +245,88 @@ export default function Home() {
         </section>
       )}
 
+      {/* Premium Technology Partner Section */}
+      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <div className="container-custom">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+              Powered by <span className="text-solar-orange font-bold">Solax Power</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We're proud to be an authorized distributor of Solax Power's industry-leading solar panels and energy storage solutions, delivering maximum efficiency and reliability for Texas homes and businesses.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="animate-fade-in">
+              <div className="glass p-8 rounded-3xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Solax Power Solar Panels Installation"
+                  className="w-full h-80 object-cover rounded-2xl"
+                />
+              </div>
+            </div>
+
+            <div className="animate-slide-up">
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold text-neutral-dark mb-4">Why Solax Power?</h3>
+                <p className="text-gray-600 text-lg mb-6">
+                  As a leading global manufacturer, Solax Power combines cutting-edge technology with proven reliability, making them our trusted partner for premium solar solutions.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Industry-Leading Efficiency",
+                    description: "Up to 22.8% panel efficiency with advanced PERC cell technology",
+                    icon: <Zap className="h-6 w-6" />
+                  },
+                  {
+                    title: "25-Year Performance Warranty",
+                    description: "Guaranteed power output with comprehensive warranty coverage",
+                    icon: <Shield className="h-6 w-6" />
+                  },
+                  {
+                    title: "Weather Resilient Design",
+                    description: "Built to withstand Texas weather with superior durability ratings",
+                    icon: <TrendingUp className="h-6 w-6" />
+                  }
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="text-solar-orange bg-orange-50 p-3 rounded-xl flex-shrink-0">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-neutral-dark mb-2">{feature.title}</h4>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Technology Stats */}
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            {[
+              { stat: "22.8%", label: "Peak Efficiency" },
+              { stat: "25 Years", label: "Product Warranty" },
+              { stat: "2400 Pa", label: "Snow Load Rating" },
+              { stat: "IP68", label: "Weather Protection" }
+            ].map((item, index) => (
+              <div key={index} className="animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="glass p-6 rounded-2xl hover-lift">
+                  <div className="text-3xl font-bold text-solar-orange mb-2">{item.stat}</div>
+                  <div className="text-gray-600">{item.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Featured Projects Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
