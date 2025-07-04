@@ -32,11 +32,11 @@ export default function Header() {
     return false;
   };
 
-  const isAboutPage = location === "/about";
+  const isWhiteHeaderPage = location === "/about" || location === "/services" || location === "/portfolio";
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isAboutPage 
+      isWhiteHeaderPage 
         ? 'glass backdrop-blur-lg bg-white/90 shadow-lg' 
         : isScrolled 
           ? 'glass backdrop-blur-lg bg-white/80 shadow-lg' 
@@ -51,7 +51,7 @@ export default function Header() {
               <div className="absolute inset-0 bg-solar-orange/20 rounded-full blur-xl"></div>
             </div>
             <span className={`text-2xl font-bold transition-colors duration-300 ${
-              isAboutPage || isScrolled ? 'text-neutral-dark' : 'text-white'
+              isWhiteHeaderPage || isScrolled ? 'text-neutral-dark' : 'text-white'
             }`}>
               Solar Galaxy
             </span>
@@ -64,7 +64,7 @@ export default function Header() {
                 <span className={`relative font-medium transition-all duration-300 hover:scale-105 ${
                   isActive(item.href) 
                     ? 'text-solar-orange'
-                    : (isAboutPage || isScrolled)
+                    : (isWhiteHeaderPage || isScrolled)
                       ? 'text-neutral-dark hover:text-solar-orange' 
                       : 'text-white hover:text-solar-orange'
                 }`}>
@@ -92,7 +92,7 @@ export default function Header() {
                   variant="ghost" 
                   size="icon"
                   className={`hover-lift transition-colors ${
-                    (isAboutPage || isScrolled) ? 'text-neutral-dark hover:text-solar-orange' : 'text-white hover:text-solar-orange'
+                    (isWhiteHeaderPage || isScrolled) ? 'text-neutral-dark hover:text-solar-orange' : 'text-white hover:text-solar-orange'
                   }`}
                 >
                   <Menu className="h-6 w-6" />
