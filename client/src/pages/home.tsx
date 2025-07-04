@@ -218,7 +218,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-solar-orange scrollbar-track-white/10 pb-4">
+            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/20 hover:scrollbar-thumb-solar-orange/50 scrollbar-track-transparent pb-4">
               <div className="flex gap-8 min-w-max">
                 {testimonials.map((testimonial, index) => (
                   <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up flex-shrink-0 w-80" style={{animationDelay: `${index * 0.2}s`}}>
