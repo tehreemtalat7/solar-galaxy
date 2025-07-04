@@ -46,7 +46,9 @@ export default function Header() {
               <Sun className="h-10 w-10 text-solar-orange animate-float" />
               <div className="absolute inset-0 bg-solar-orange/20 rounded-full blur-xl"></div>
             </div>
-            <span className="text-2xl font-bold transition-colors duration-300 text-neutral-dark">
+            <span className={`text-2xl font-bold transition-colors duration-300 ${
+              isScrolled ? 'text-neutral-dark' : 'text-white'
+            }`}>
               Solar Galaxy
             </span>
           </Link>
