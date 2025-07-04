@@ -218,28 +218,30 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.slice(0, 3).map((testimonial, index) => (
-                <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-6">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
-                    <div className="flex items-center">
-                      <div className="w-12 h-12 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                        {testimonial.name.charAt(0)}
+            <div className="max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-solar-orange scrollbar-track-white/10 pr-4">
+              <div className="grid md:grid-cols-3 gap-8">
+                {testimonials.map((testimonial, index) => (
+                  <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
+                    <CardContent className="p-8">
+                      <div className="flex items-center mb-6">
+                        {[...Array(testimonial.rating || 5)].map((_, i) => (
+                          <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                        ))}
                       </div>
-                      <div>
-                        <div className="font-semibold text-white">{testimonial.name}</div>
-                        <div className="text-gray-400">{testimonial.location}</div>
+                      <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
+                      <div className="flex items-center">
+                        <div className="w-12 h-12 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                          {testimonial.name.charAt(0)}
+                        </div>
+                        <div>
+                          <div className="font-semibold text-white">{testimonial.name}</div>
+                          <div className="text-gray-400">{testimonial.location}</div>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
