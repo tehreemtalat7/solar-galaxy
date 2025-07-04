@@ -131,11 +131,11 @@ export default function QuoteCalculator({ onQuoteCalculated }: QuoteCalculatorPr
                 </div>
                 <div>
                   <div className="text-gray-600">Est. Cost</div>
-                  <div className="font-bold text-solar-orange">${results.estimatedCost.toLocaleString()}</div>
+                  <div className="font-bold text-solar-orange">PKR {results.estimatedCost.toLocaleString()}</div>
                 </div>
                 <div>
                   <div className="text-gray-600">Monthly Savings</div>
-                  <div className="font-bold text-solar-green">${results.monthlySavings}</div>
+                  <div className="font-bold text-solar-green">PKR {results.monthlySavings.toLocaleString()}</div>
                 </div>
                 <div>
                   <div className="text-gray-600">Payback Period</div>
