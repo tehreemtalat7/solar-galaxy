@@ -16,7 +16,7 @@ export default function Footer() {
               Professional solar installation and distribution services for residential and commercial properties.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-solar-orange transition-colors">
+              <a href="https://www.facebook.com/people/Solar-Galaxy/61566850044252/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-solar-orange transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-solar-orange transition-colors">
@@ -58,8 +58,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-gray-400">
-              <p>123 Ferozepur Road</p>
-              <p>Lahore, Punjab 54000</p>
+              <p>17- H BLOCK, COMMERCIAL AREA</p>
+              <p>DHA PHASE, LAHORE</p>
               <p>+92 42 123-4567</p>
               <p>info@solargalaxy.com</p>
             </div>
