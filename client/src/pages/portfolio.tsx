@@ -354,7 +354,7 @@ export default function Portfolio() {
               
               <Button 
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 text-lg px-12 py-6 hover-lift"
+                className="border-white border-2 text-white hover:bg-white hover:text-solar-orange text-lg px-12 py-6 hover-lift transition-all duration-300"
                 asChild
               >
                 <Link href="/contact">Schedule Site Visit</Link>
