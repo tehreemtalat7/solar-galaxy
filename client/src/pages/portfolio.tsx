@@ -103,7 +103,7 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
               <h1 className="text-6xl md:text-7xl font-bold mb-8">
-                Our <span className="text-gradient">Portfolio</span>
+                Our <span className="bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent font-extrabold">Portfolio</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">
                 Discover our successful solar installations across residential, commercial, 
