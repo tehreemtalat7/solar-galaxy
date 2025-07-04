@@ -61,6 +61,12 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        "solar-orange": "var(--solar-orange)",
+        "solar-orange-light": "var(--solar-orange-light)",
+        "solar-green": "var(--solar-green)",
+        "solar-green-light": "var(--solar-green-light)",
+        "neutral-dark": "var(--neutral-dark)",
+        "neutral-light": "var(--neutral-light)",
       },
       keyframes: {
         "accordion-down": {
