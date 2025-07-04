@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,13 +17,17 @@ import {
   TrendingUp,
   Sun,
   Users,
-  Award
+  Award,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { Link } from "wouter";
 import { trackEvent } from "@/lib/analytics";
 import type { Testimonial, Project } from "@shared/schema";
 
 export default function Home() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
   const { data: testimonials } = useQuery<Testimonial[]>({
     queryKey: ['/api/testimonials'],
   });
@@ -30,6 +35,18 @@ export default function Home() {
   const { data: projects } = useQuery<Project[]>({
     queryKey: ['/api/projects'],
   });
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
 
   const handleGetQuoteClick = () => {
     trackEvent('get_quote_click', 'engagement', 'hero_section');
@@ -218,29 +235,53 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/20 hover:scrollbar-thumb-solar-orange/50 scrollbar-track-transparent pb-4">
-              <div className="flex gap-8 min-w-max">
-                {testimonials.map((testimonial, index) => (
-                  <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up flex-shrink-0 w-80" style={{animationDelay: `${index * 0.2}s`}}>
-                    <CardContent className="p-8">
-                      <div className="flex items-center mb-6">
-                        {[...Array(testimonial.rating || 5)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                        ))}
-                      </div>
-                      <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                          {testimonial.name.charAt(0)}
+            <div className="relative">
+              {/* Left Arrow */}
+              <Button
+                onClick={scrollLeft}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 text-white border-0 rounded-full w-12 h-12 backdrop-blur-sm shadow-lg"
+                size="icon"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+
+              {/* Right Arrow */}
+              <Button
+                onClick={scrollRight}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 text-white border-0 rounded-full w-12 h-12 backdrop-blur-sm shadow-lg"
+                size="icon"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+
+              {/* Scrollable Container */}
+              <div 
+                ref={scrollRef}
+                className="overflow-x-auto scrollbar-none pb-4 mx-12"
+              >
+                <div className="flex gap-8 min-w-max">
+                  {testimonials.map((testimonial, index) => (
+                    <Card key={testimonial.id} className="bg-white/5 border-white/10 hover-lift animate-slide-up flex-shrink-0 w-80" style={{animationDelay: `${index * 0.2}s`}}>
+                      <CardContent className="p-8">
+                        <div className="flex items-center mb-6">
+                          {[...Array(testimonial.rating || 5)].map((_, i) => (
+                            <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                          ))}
                         </div>
-                        <div>
-                          <div className="font-semibold text-white">{testimonial.name}</div>
-                          <div className="text-gray-400">{testimonial.location}</div>
+                        <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
+                        <div className="flex items-center">
+                          <div className="w-12 h-12 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            {testimonial.name.charAt(0)}
+                          </div>
+                          <div>
+                            <div className="font-semibold text-white">{testimonial.name}</div>
+                            <div className="text-gray-400">{testimonial.location}</div>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
