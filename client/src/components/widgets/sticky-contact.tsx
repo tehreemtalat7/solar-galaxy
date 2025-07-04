@@ -26,7 +26,7 @@ export default function StickyContact() {
           size="icon"
           onClick={handleCallClick}
         >
-          <a href="tel:+15551234567">
+          <a href="tel:03334214007">
             <Phone className="h-6 w-6" />
           </a>
         </Button>
@@ -39,7 +39,7 @@ export default function StickyContact() {
           onClick={handleWhatsAppClick}
           style={{animationDelay: '1s'}}
         >
-          <a href="https://wa.me/15551234567?text=Hi,%20I\'m%20interested%20in%20solar%20installation%20from%20Solar%20Galaxy" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/923334214007?text=Hi,%20I\'m%20interested%20in%20solar%20installation%20from%20Solar%20Galaxy" target="_blank" rel="noopener noreferrer">
             <MessageCircle className="h-6 w-6" />
           </a>
         </Button>

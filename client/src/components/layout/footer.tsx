@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="space-y-2 text-gray-400">
               <p>17-H Block, Commercial Area</p>
               <p>DHA Phase, Lahore</p>
-              <p>+92 42 123-4567</p>
+              <p>0333 4214007</p>
               <p>solargalaxy.co@gmail.com</p>
             </div>
           </div>

@@ -108,7 +108,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold text-neutral-dark">Phone</div>
-                    <div className="text-gray-600">+92 42 123-4567</div>
+                    <div className="text-gray-600">0333 4214007</div>
                   </div>
                 </div>
                 
