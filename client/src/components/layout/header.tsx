@@ -43,15 +43,15 @@ export default function Header() {
           ? 'glass backdrop-blur-lg bg-white/80 shadow-lg' 
           : 'bg-transparent'
     }`}>
-      <nav className="container-custom">
-        <div className="flex items-center justify-between py-4">
+      <nav className="container-custom px-4">
+        <div className="flex items-center justify-between py-3 md:py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 hover-lift">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 hover-lift">
             <div className="relative">
-              <Sun className="h-10 w-10 text-solar-orange animate-float" />
+              <Sun className="h-8 w-8 sm:h-10 sm:w-10 text-solar-orange animate-float" />
               <div className="absolute inset-0 bg-solar-orange/20 rounded-full blur-xl"></div>
             </div>
-            <span className={`text-2xl font-bold transition-colors duration-300 ${
+            <span className={`text-lg sm:text-xl md:text-2xl font-bold transition-colors duration-300 ${
               isWhiteHeaderPage || isScrolled ? 'text-neutral-dark' : 'text-white'
             }`}>
               Solar Galaxy
@@ -95,19 +95,20 @@ export default function Header() {
                   className={`hover-lift transition-colors ${
                     (isWhiteHeaderPage || isScrolled) ? 'text-neutral-dark hover:text-solar-orange' : 'text-white hover:text-solar-orange'
                   }`}
+                  data-testid="mobile-menu-button"
                 >
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="glass backdrop-blur-lg">
-                <div className="flex flex-col space-y-6 mt-12">
+              <SheetContent side="right" className="glass backdrop-blur-lg w-[280px] sm:w-[350px]">
+                <div className="flex flex-col space-y-4 sm:space-y-6 mt-8 sm:mt-12">
                   {navigation.map((item) => (
                     <Link 
                       key={item.name} 
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                     >
-                      <span className={`block text-lg font-medium py-3 transition-all duration-300 hover:scale-105 hover:text-solar-orange ${
+                      <span className={`block text-base sm:text-lg font-medium py-2 sm:py-3 transition-all duration-300 hover:scale-105 hover:text-solar-orange ${
                         isActive(item.href) 
                           ? 'text-solar-orange' 
                           : 'text-neutral-dark'
@@ -118,7 +119,7 @@ export default function Header() {
                   ))}
                   
                   <Button 
-                    className="btn-modern w-full mt-6"
+                    className="btn-modern w-full mt-4 sm:mt-6"
                     onClick={() => setIsOpen(false)}
                     asChild
                   >
