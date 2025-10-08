@@ -2,6 +2,63 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Award, Users, Calendar, Shield, Target, Zap, Globe } from "lucide-react";
 import { Link } from "wouter";
+import { useState, useEffect, useRef } from "react";
+
+function CounterAnimation({ value, suffix = "", duration = 2000 }: { value: number; suffix?: string; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          
+          const startTime = Date.now();
+          const startValue = 0;
+          
+          const animate = () => {
+            const currentTime = Date.now();
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function for smooth animation
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const currentCount = Math.floor(easeOutQuart * value);
+            
+            setCount(currentCount);
+            
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(value);
+            }
+          };
+          
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, [value, duration, hasAnimated]);
+
+  return (
+    <div ref={elementRef} className="text-4xl font-bold text-white mb-2">
+      {count.toLocaleString()}{suffix}
+    </div>
+  );
+}
 
 export default function About() {
   return (
@@ -148,17 +205,17 @@ export default function About() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "2,500+", label: "Installations", icon: <Zap className="h-8 w-8" /> },
-              { number: "15+", label: "Years Experience", icon: <Calendar className="h-8 w-8" /> },
-              { number: "98%", label: "Customer Satisfaction", icon: <Award className="h-8 w-8" /> },
-              { number: "50MW+", label: "Total Capacity", icon: <Globe className="h-8 w-8" /> }
+              { value: 2500, suffix: "+", label: "Installations", icon: <Zap className="h-8 w-8" /> },
+              { value: 15, suffix: "+", label: "Years Experience", icon: <Calendar className="h-8 w-8" /> },
+              { value: 98, suffix: "%", label: "Customer Satisfaction", icon: <Award className="h-8 w-8" /> },
+              { value: 50, suffix: "MW+", label: "Total Capacity", icon: <Globe className="h-8 w-8" /> }
             ].map((stat, index) => (
               <div key={index} className="text-center animate-scale-in hover-lift" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className="glass p-8 rounded-3xl bg-white/5">
                   <div className="text-solar-orange mb-4 flex justify-center">
                     {stat.icon}
                   </div>
-                  <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <CounterAnimation value={stat.value} suffix={stat.suffix} />
                   <div className="text-gray-300">{stat.label}</div>
                 </div>
               </div>
