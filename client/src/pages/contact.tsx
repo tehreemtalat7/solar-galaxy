@@ -81,13 +81,13 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-solar-green to-solar-green-light">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-solar-green to-solar-green-light">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">
               Get in Touch
             </h1>
-            <p className="text-xl text-white">
+            <p className="text-base sm:text-lg md:text-xl text-white">
               Ready to start your solar journey? Contact us for a free consultation and quote.
             </p>
           </div>
@@ -95,64 +95,64 @@ export default function Contact() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-bold text-neutral-dark mb-8">Contact Information</h2>
-              <div className="space-y-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-neutral-dark mb-6 md:mb-8">Contact Information</h2>
+              <div className="space-y-4 md:space-y-6">
                 <div className="flex items-center">
-                  <div className="bg-solar-orange text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                    <Phone className="h-6 w-6" />
+                  <div className="bg-solar-orange text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <div className="font-semibold text-neutral-dark">Phone</div>
-                    <div className="text-gray-600">0333 4214007</div>
+                    <div className="font-semibold text-sm sm:text-base text-neutral-dark">Phone</div>
+                    <div className="text-xs sm:text-sm md:text-base text-gray-600">0333 4214007</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="bg-solar-green text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                    <Mail className="h-6 w-6" />
+                  <div className="bg-solar-green text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                    <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <div className="font-semibold text-neutral-dark">Email</div>
-                    <div className="text-gray-600">solargalaxy.co@gmail.com</div>
+                    <div className="font-semibold text-sm sm:text-base text-neutral-dark">Email</div>
+                    <div className="text-xs sm:text-sm md:text-base text-gray-600 break-all">solargalaxy.co@gmail.com</div>
                   </div>
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="bg-solar-orange text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                    <MapPin className="h-6 w-6" />
+                  <div className="bg-solar-orange text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
+                    <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
                   <div>
-                    <div className="font-semibold text-neutral-dark">Address</div>
-                    <div className="text-gray-600">17-H Block, Commercial Area DHA Phase, Lahore</div>
+                    <div className="font-semibold text-sm sm:text-base text-neutral-dark">Address</div>
+                    <div className="text-xs sm:text-sm md:text-base text-gray-600">17-H Block, Commercial Area DHA Phase, Lahore</div>
                   </div>
                 </div>
               </div>
               
               {/* Google Maps Integration */}
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold text-neutral-dark mb-4">Find Us</h3>
-                <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600">Interactive Google Map</p>
-                    <p className="text-sm text-gray-500">17-H Block, Commercial Area DHA Phase, Lahore</p>
+              <div className="mt-6 md:mt-8">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-3 md:mb-4">Find Us</h3>
+                <div className="bg-gray-200 rounded-lg h-48 sm:h-56 md:h-64 flex items-center justify-center">
+                  <div className="text-center px-4">
+                    <MapPin className="h-10 w-10 sm:h-12 sm:w-12 text-gray-400 mx-auto mb-3 md:mb-4" />
+                    <p className="text-sm sm:text-base text-gray-600">Interactive Google Map</p>
+                    <p className="text-xs sm:text-sm text-gray-500 mt-1">17-H Block, Commercial Area DHA Phase, Lahore</p>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-neutral-dark mb-8">Send us a Message</h2>
+            <div className="mt-8 md:mt-0">
+              <h2 className="text-xl sm:text-2xl font-bold text-neutral-dark mb-6 md:mb-8">Send us a Message</h2>
               <Card>
-                <CardContent className="p-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
+                <CardContent className="p-4 sm:p-6">
+                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="firstName">First Name *</Label>
                         <Input 
@@ -226,42 +226,42 @@ export default function Contact() {
       </section>
 
       {/* Business Hours */}
-      <section className="py-20 bg-neutral-light">
+      <section className="py-12 md:py-20 bg-neutral-light">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neutral-dark mb-8">Business Hours</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-dark mb-6 md:mb-8">Business Hours</h2>
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-8">
               <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-neutral-dark mb-4">Office Hours</h3>
-                  <div className="space-y-2 text-sm">
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-3 sm:mb-4">Office Hours</h3>
+                  <div className="space-y-2 text-xs sm:text-sm">
                     <div className="flex justify-between">
                       <span>Monday - Friday:</span>
-                      <span>10:00 AM - 10:00 PM</span>
+                      <span className="font-medium">10:00 AM - 10:00 PM</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Saturday:</span>
-                      <span>12:00 PM - 8:00 PM</span>
+                      <span className="font-medium">12:00 PM - 8:00 PM</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Sunday:</span>
-                      <span>Closed</span>
+                      <span className="font-medium">Closed</span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
               
               <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-neutral-dark mb-4">Emergency Service</h3>
-                  <div className="space-y-2 text-sm">
+                <CardContent className="p-4 sm:p-6">
+                  <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-3 sm:mb-4">Emergency Service</h3>
+                  <div className="space-y-2 text-xs sm:text-sm">
                     <div className="flex justify-between">
                       <span>24/7 Support:</span>
-                      <span>Available</span>
+                      <span className="font-medium">Available</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Emergency Line:</span>
-                      <span>0333 4214007</span>
+                      <span className="font-medium">0333 4214007</span>
                     </div>
                     <div className="text-gray-600 text-xs mt-2">
                       For urgent system issues only
