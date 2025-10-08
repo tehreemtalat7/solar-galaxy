@@ -192,7 +192,7 @@ export default function Contact() {
                       <Input 
                         id="phone"
                         type="tel"
-                        value={formData.phone}
+                        value={formData.phone || ""}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
                         placeholder="0333 1234567"
                       />

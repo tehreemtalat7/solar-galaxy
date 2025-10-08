@@ -305,7 +305,7 @@ export default function Services() {
               
               <Button 
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 text-lg px-12 py-6 hover-lift"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-solar-orange text-lg px-12 py-6 hover-lift"
                 asChild
               >
                 <Link href="/contact">Schedule Consultation</Link>
