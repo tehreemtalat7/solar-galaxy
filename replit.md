@@ -156,5 +156,7 @@ Changelog:
   * Optimized header/navigation for mobile with responsive logo and menu sizing
   * Enhanced form layouts for touch-friendly mobile interaction
   * Ensured all cards and content stack properly on mobile devices
+  * Optimized Portfolio page: responsive stats, project cards, categories, and impact sections
+  * Optimized Net Metering page: responsive hero, process steps, benefits, requirements, and DISCO cards
   * Verified mobile responsiveness with e2e testing on iPhone 12 viewport
 ```
