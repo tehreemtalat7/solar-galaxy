@@ -184,7 +184,7 @@ export default function Quote() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-solar-orange to-solar-orange-light">
+      <section className="py-12 md:py-20 bg-gradient-to-r from-solar-orange to-solar-orange-light">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">
@@ -211,7 +211,7 @@ export default function Quote() {
               <CardContent className="p-4 sm:p-6">
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   {/* Personal Information */}
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName">First Name *</Label>
                       <Input 
@@ -232,7 +232,7 @@ export default function Quote() {
                     </div>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="email">Email *</Label>
                       <Input 

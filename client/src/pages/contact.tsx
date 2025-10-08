@@ -81,7 +81,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-solar-green to-solar-green-light">
+      <section className="py-12 md:py-20 bg-gradient-to-r from-solar-green to-solar-green-light">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">
@@ -97,7 +97,7 @@ export default function Contact() {
       {/* Contact Content */}
       <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Contact Information */}
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-neutral-dark mb-6 md:mb-8">Contact Information</h2>
@@ -152,7 +152,7 @@ export default function Contact() {
               <Card>
                 <CardContent className="p-4 sm:p-6">
                   <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="firstName">First Name *</Label>
                         <Input 
@@ -230,7 +230,7 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-neutral-dark mb-6 md:mb-8">Business Hours</h2>
-            <div className="grid sm:grid-cols-2 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
               <Card>
                 <CardContent className="p-4 sm:p-6">
                   <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-3 sm:mb-4">Office Hours</h3>

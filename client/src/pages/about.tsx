@@ -73,10 +73,10 @@ export default function About() {
         <div className="container-custom relative z-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8">
                 About <span className="bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent font-extrabold">Solar Galaxy</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
                 Leading the renewable energy revolution with professional solar installation 
                 and distribution services for over 15 years.
               </p>
@@ -88,7 +88,7 @@ export default function About() {
       {/* Mission & Vision */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="animate-fade-in px-4">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-dark mb-6 md:mb-8">
                 Powering a Sustainable Future
@@ -156,7 +156,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 px-4">
             {[
               {
                 icon: <Target className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16" />,
@@ -236,7 +236,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 px-4">
             {[
               {
                 name: "Michael Rodriguez",

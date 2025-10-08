@@ -32,10 +32,10 @@ export default function Services() {
         <div className="container-custom relative z-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8">
                 Solar <span className="bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent font-extrabold">Services</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed mb-8 md:mb-12">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed mb-8 md:mb-12">
                 Comprehensive solar solutions for every need. From residential rooftops to 
                 large commercial installations, we deliver excellence at every scale.
               </p>
@@ -63,7 +63,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 px-4">
             {/* Residential Solar */}
             <Card className="hover-lift border-0 shadow-2xl overflow-hidden animate-slide-up">
               <div className="relative h-48 sm:h-56 md:h-64">

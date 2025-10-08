@@ -72,7 +72,7 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <div className="max-w-6xl mx-auto text-center text-white">
             <div className="animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 md:mb-8 leading-tight px-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 leading-tight px-4">
                 Power Your Future
                 <br />
                 <span className="text-gradient bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent">
@@ -80,7 +80,7 @@ export default function Home() {
                 </span>
               </h1>
               
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
+              <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-12 text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
                 Experience the future of energy with Solar Galaxy's cutting-edge solar solutions. 
                 Join thousands who've made the switch to clean, renewable power.
               </p>
@@ -131,7 +131,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
             {[
               {
                 icon: <Zap className="h-10 w-10 sm:h-12 sm:w-12" />,
@@ -169,7 +169,7 @@ export default function Home() {
       {/* Services Section */}
       <section className="section-padding bg-gradient-to-br from-neutral-light to-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="animate-fade-in px-4">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-dark mb-6 md:mb-8">
                 Complete Solar Solutions
@@ -300,7 +300,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center mb-12 md:mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-12 md:mb-20">
             <div className="animate-fade-in px-4">
               <div className="glass p-4 md:p-8 rounded-3xl">
                 <img 
@@ -382,7 +382,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-4">
             {[
               {
                 title: "Luxury Lahore Estate",
