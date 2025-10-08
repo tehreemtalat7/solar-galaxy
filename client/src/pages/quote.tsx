@@ -184,13 +184,13 @@ export default function Quote() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-solar-orange to-solar-orange-light">
+      <section className="py-16 md:py-20 bg-gradient-to-r from-solar-orange to-solar-orange-light">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6">
               Get Your Free Solar Quote
             </h1>
-            <p className="text-xl text-white">
+            <p className="text-base sm:text-lg md:text-xl text-white">
               Calculate your potential savings and get a personalized solar proposal in minutes.
             </p>
           </div>
@@ -198,20 +198,20 @@ export default function Quote() {
       </section>
 
       {/* Quote Calculator */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center text-2xl text-neutral-dark">
-                  <Calculator className="mr-3 h-8 w-8 text-solar-orange" />
+              <CardHeader className="p-4 sm:p-6">
+                <CardTitle className="flex items-center text-lg sm:text-xl md:text-2xl text-neutral-dark">
+                  <Calculator className="mr-2 sm:mr-3 h-6 w-6 sm:h-8 sm:w-8 text-solar-orange flex-shrink-0" />
                   Solar Quote Calculator
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <CardContent className="p-4 sm:p-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   {/* Personal Information */}
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="firstName">First Name *</Label>
                       <Input 
@@ -232,7 +232,7 @@ export default function Quote() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="email">Email *</Label>
                       <Input 
@@ -321,37 +321,37 @@ export default function Quote() {
                   {/* Quote Results */}
                   {showResults && quoteResults && (
                     <Card className="bg-solar-green bg-opacity-10 border-solar-green">
-                      <CardContent className="p-6">
-                        <h4 className="text-lg font-semibold text-neutral-dark mb-4">
+                      <CardContent className="p-4 sm:p-6">
+                        <h4 className="text-base sm:text-lg font-semibold text-neutral-dark mb-3 sm:mb-4">
                           Estimated Solar System Quote
                         </h4>
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-2 gap-3 sm:gap-4">
                           <div>
-                            <div className="text-sm text-gray-600">Recommended System Size</div>
-                            <div className="text-2xl font-bold text-solar-green">
+                            <div className="text-xs sm:text-sm text-gray-600">Recommended System Size</div>
+                            <div className="text-lg sm:text-xl md:text-2xl font-bold text-solar-green">
                               {quoteResults.systemSize} kW
                             </div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-600">Estimated Cost</div>
-                            <div className="text-2xl font-bold text-solar-orange">
+                            <div className="text-xs sm:text-sm text-gray-600">Estimated Cost</div>
+                            <div className="text-lg sm:text-xl md:text-2xl font-bold text-solar-orange">
                               ${quoteResults.estimatedCost.toLocaleString()}
                             </div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-600">Monthly Savings</div>
-                            <div className="text-2xl font-bold text-solar-green">
+                            <div className="text-xs sm:text-sm text-gray-600">Monthly Savings</div>
+                            <div className="text-lg sm:text-xl md:text-2xl font-bold text-solar-green">
                               ${quoteResults.monthlySavings}
                             </div>
                           </div>
                           <div>
-                            <div className="text-sm text-gray-600">Payback Period</div>
-                            <div className="text-2xl font-bold text-solar-orange">
+                            <div className="text-xs sm:text-sm text-gray-600">Payback Period</div>
+                            <div className="text-lg sm:text-xl md:text-2xl font-bold text-solar-orange">
                               {quoteResults.paybackPeriod} years
                             </div>
                           </div>
                         </div>
-                        <div className="mt-4 p-4 bg-white rounded-lg">
+                        <div className="mt-3 sm:mt-4 p-3 sm:p-4 bg-white rounded-lg">
                           <p className="text-sm text-gray-600 mb-2">This estimate includes:</p>
                           <ul className="text-sm text-gray-600 space-y-1">
                             <li className="flex items-center">
@@ -405,61 +405,61 @@ export default function Quote() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-neutral-light">
+      <section className="py-12 md:py-20 bg-neutral-light">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-dark mb-3 md:mb-4">
               Why Choose Solar?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               Discover the benefits of switching to clean, renewable solar energy.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-green mb-4">
-                  <Home className="h-12 w-12 mx-auto" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="text-solar-green mb-3 sm:mb-4">
+                  <Home className="h-10 w-10 sm:h-12 sm:w-12 mx-auto" />
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Increase Home Value</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-2">Increase Home Value</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">
                   Solar installations can increase your home's value by up to 15%.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-orange mb-4">
-                  <Zap className="h-12 w-12 mx-auto" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="text-solar-orange mb-3 sm:mb-4">
+                  <Zap className="h-10 w-10 sm:h-12 sm:w-12 mx-auto" />
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Lower Energy Bills</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-2">Lower Energy Bills</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">
                   Reduce or eliminate your monthly electricity bills.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-green mb-4">
-                  <Battery className="h-12 w-12 mx-auto" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="text-solar-green mb-3 sm:mb-4">
+                  <Battery className="h-10 w-10 sm:h-12 sm:w-12 mx-auto" />
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Energy Independence</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-2">Energy Independence</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">
                   Generate your own clean energy and reduce grid dependence.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="text-solar-orange mb-4">
-                  <Shield className="h-12 w-12 mx-auto" />
+              <CardContent className="p-4 sm:p-6">
+                <div className="text-solar-orange mb-3 sm:mb-4">
+                  <Shield className="h-10 w-10 sm:h-12 sm:w-12 mx-auto" />
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-dark mb-2">Environmental Impact</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-2">Environmental Impact</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">
                   Reduce your carbon footprint and help protect the environment.
                 </p>
               </CardContent>
