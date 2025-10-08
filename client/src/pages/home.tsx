@@ -257,7 +257,7 @@ export default function Home() {
               {/* Scrollable Container */}
               <div 
                 ref={scrollRef}
-                className="overflow-x-auto scrollbar-none pb-4 mx-12"
+                className="overflow-x-auto scrollbar-none mx-12"
               >
                 <div className="flex gap-8 min-w-max">
                   {testimonials.map((testimonial, index) => (
