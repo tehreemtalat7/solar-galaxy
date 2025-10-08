@@ -20,11 +20,11 @@ export default function NetMetering() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 bg-gradient-to-r from-solar-orange to-solar-green overflow-hidden">
+      <section className="relative pt-32 md:pt-40 pb-12 md:pb-20 bg-gradient-to-r from-solar-orange to-solar-green overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight mt-4">
               Net Metering in Pakistan
             </h1>
             <p className="text-base sm:text-lg md:text-xl mb-8 opacity-90">
