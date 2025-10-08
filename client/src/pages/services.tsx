@@ -29,19 +29,19 @@ export default function Services() {
           <div className="absolute bottom-40 right-20 w-60 h-60 bg-solar-green/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
         </div>
         
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
-              <h1 className="text-6xl md:text-7xl font-bold mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 md:mb-8">
                 Solar <span className="bg-gradient-to-r from-solar-orange to-solar-green bg-clip-text text-transparent font-extrabold">Services</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-12">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed mb-8 md:mb-12">
                 Comprehensive solar solutions for every need. From residential rooftops to 
                 large commercial installations, we deliver excellence at every scale.
               </p>
               
               <Button 
-                className="btn-modern text-lg px-12 py-6 hover-glow"
+                className="btn-modern text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-6 hover-glow w-full sm:w-auto"
                 asChild
               >
                 <Link href="/quote">Get Free Assessment</Link>
@@ -54,44 +54,44 @@ export default function Services() {
       {/* Main Services Grid */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+          <div className="text-center mb-12 md:mb-20 animate-fade-in px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-dark mb-4 md:mb-6">
               Complete Solar Solutions
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Expert installation, premium equipment, and ongoing support for all your solar energy needs
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-16 px-4">
             {/* Residential Solar */}
             <Card className="hover-lift border-0 shadow-2xl overflow-hidden animate-slide-up">
-              <div className="relative h-64">
+              <div className="relative h-48 sm:h-56 md:h-64">
                 <img 
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Residential Solar Installation"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-solar-orange text-white">Most Popular</Badge>
+                <Badge className="absolute top-4 left-4 bg-solar-orange text-white text-xs sm:text-sm">Most Popular</Badge>
               </div>
-              <CardContent className="p-10">
-                <div className="flex items-center mb-6">
-                  <div className="bg-solar-orange text-white rounded-2xl w-16 h-16 flex items-center justify-center mr-6">
-                    <HomeIcon className="h-8 w-8" />
+              <CardContent className="p-6 md:p-10">
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="bg-solar-orange text-white rounded-2xl w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center mr-4 md:mr-6 flex-shrink-0">
+                    <HomeIcon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-neutral-dark">Residential Solar</h3>
-                    <p className="text-solar-orange font-semibold">For Homeowners</p>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-dark">Residential Solar</h3>
+                    <p className="text-sm sm:text-base text-solar-orange font-semibold">For Homeowners</p>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6 md:mb-8 leading-relaxed">
                   Transform your home into a clean energy powerhouse. Our residential solar systems 
                   are designed to maximize savings while enhancing your property value.
                 </p>
                 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   {[
                     "Custom roof design & engineering",
                     "High-efficiency solar panels",
@@ -100,13 +100,13 @@ export default function Services() {
                     "Smart monitoring system"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-solar-orange mr-3" />
-                      <span className="text-gray-700">{feature}</span>
+                      <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-solar-orange mr-2 sm:mr-3 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm md:text-base text-gray-700">{feature}</span>
                     </div>
                   ))}
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button className="btn-modern flex-1" asChild>
                     <Link href="/quote">Get Quote</Link>
                   </Button>
@@ -119,32 +119,32 @@ export default function Services() {
 
             {/* Commercial Solar */}
             <Card className="hover-lift border-0 shadow-2xl overflow-hidden animate-slide-up" style={{animationDelay: '0.2s'}}>
-              <div className="relative h-64">
+              <div className="relative h-48 sm:h-56 md:h-64">
                 <img 
                   src="https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Commercial Solar Installation"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                <Badge className="absolute top-4 left-4 bg-solar-green text-white">Enterprise</Badge>
+                <Badge className="absolute top-4 left-4 bg-solar-green text-white text-xs sm:text-sm">Enterprise</Badge>
               </div>
-              <CardContent className="p-10">
-                <div className="flex items-center mb-6">
-                  <div className="bg-solar-green text-white rounded-2xl w-16 h-16 flex items-center justify-center mr-6">
-                    <Building className="h-8 w-8" />
+              <CardContent className="p-6 md:p-10">
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="bg-solar-green text-white rounded-2xl w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center mr-4 md:mr-6 flex-shrink-0">
+                    <Building className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-neutral-dark">Commercial Solar</h3>
-                    <p className="text-solar-green font-semibold">For Businesses</p>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-dark">Commercial Solar</h3>
+                    <p className="text-sm sm:text-base text-solar-green font-semibold">For Businesses</p>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6 md:mb-8 leading-relaxed">
                   Reduce operational costs and demonstrate environmental leadership. Our commercial 
                   solutions scale from small businesses to large industrial facilities.
                 </p>
                 
-                <div className="space-y-4 mb-8">
+                <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   {[
                     "Comprehensive energy assessment",
                     "Scalable system design",
@@ -153,13 +153,13 @@ export default function Services() {
                     "24/7 performance monitoring"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-solar-green mr-3" />
-                      <span className="text-gray-700">{feature}</span>
+                      <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-solar-green mr-2 sm:mr-3 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm md:text-base text-gray-700">{feature}</span>
                     </div>
                   ))}
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Button className="btn-modern flex-1" asChild>
                     <Link href="/quote">Get Quote</Link>
                   </Button>
@@ -176,49 +176,49 @@ export default function Services() {
       {/* Additional Services */}
       <section className="section-padding bg-gradient-to-br from-neutral-light to-white">
         <div className="container-custom">
-          <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+          <div className="text-center mb-12 md:mb-20 animate-fade-in px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-dark mb-4 md:mb-6">
               Additional Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive solutions to maximize your solar investment
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 px-4">
             {[
               {
-                icon: <Battery className="h-12 w-12" />,
+                icon: <Battery className="h-10 w-10 sm:h-12 sm:w-12" />,
                 title: "Battery Storage",
                 description: "Store excess energy for use during peak hours or power outages",
                 color: "text-solar-orange"
               },
               {
-                icon: <Settings className="h-12 w-12" />,
+                icon: <Settings className="h-10 w-10 sm:h-12 sm:w-12" />,
                 title: "Maintenance",
                 description: "Professional cleaning, inspection, and performance optimization",
                 color: "text-solar-green"
               },
               {
-                icon: <Calculator className="h-12 w-12" />,
+                icon: <Calculator className="h-10 w-10 sm:h-12 sm:w-12" />,
                 title: "Financing",
                 description: "Flexible payment options including $0 down solar loans",
                 color: "text-solar-orange"
               },
               {
-                icon: <Award className="h-12 w-12" />,
+                icon: <Award className="h-10 w-10 sm:h-12 sm:w-12" />,
                 title: "Warranty",
                 description: "Comprehensive 25-year warranty on equipment and workmanship",
                 color: "text-solar-green"
               }
             ].map((service, index) => (
               <Card key={index} className="hover-lift border-0 shadow-lg animate-slide-up text-center" style={{animationDelay: `${index * 0.1}s`}}>
-                <CardContent className="p-8">
-                  <div className={`${service.color} mb-6 flex justify-center`}>
+                <CardContent className="p-6 md:p-8">
+                  <div className={`${service.color} mb-4 md:mb-6 flex justify-center`}>
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-neutral-dark mb-4">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-neutral-dark mb-3 md:mb-4">{service.title}</h3>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -229,55 +229,55 @@ export default function Services() {
       {/* Process Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-20 animate-fade-in">
-            <h2 className="text-5xl font-bold text-neutral-dark mb-6">
+          <div className="text-center mb-12 md:mb-20 animate-fade-in px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-dark mb-4 md:mb-6">
               Our Installation Process
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               From initial consultation to system activation, we make going solar simple
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 px-4">
             {[
               {
                 step: "01",
                 title: "Consultation",
                 description: "Free energy assessment and custom system design",
-                icon: <Users className="h-8 w-8" />
+                icon: <Users className="h-6 w-6 sm:h-8 sm:w-8" />
               },
               {
                 step: "02", 
                 title: "Permitting",
                 description: "We handle all permits and utility interconnection",
-                icon: <CheckCircle className="h-8 w-8" />
+                icon: <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8" />
               },
               {
                 step: "03",
                 title: "Installation",
                 description: "Professional installation by certified technicians",
-                icon: <Settings className="h-8 w-8" />
+                icon: <Settings className="h-6 w-6 sm:h-8 sm:w-8" />
               },
               {
                 step: "04",
                 title: "Activation",
                 description: "System testing, monitoring setup, and activation",
-                icon: <Zap className="h-8 w-8" />
+                icon: <Zap className="h-6 w-6 sm:h-8 sm:w-8" />
               }
             ].map((step, index) => (
               <div key={index} className="text-center animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
-                <div className="relative mb-8">
-                  <div className="glass w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-4 hover-lift">
+                <div className="relative mb-6 md:mb-8">
+                  <div className="glass w-16 h-16 sm:w-20 sm:h-20 rounded-3xl flex items-center justify-center mx-auto mb-4 hover-lift">
                     <div className="text-solar-orange">
                       {step.icon}
                     </div>
                   </div>
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  <div className="absolute -top-2 -right-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gradient-to-r from-solar-orange to-solar-green rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-bold">
                     {step.step}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-neutral-dark mb-4">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-neutral-dark mb-3 md:mb-4">{step.title}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600">{step.description}</p>
               </div>
             ))}
           </div>
@@ -286,18 +286,18 @@ export default function Services() {
 
       {/* CTA Section */}
       <section className="section-padding bg-gradient-to-r from-solar-orange to-solar-green text-white">
-        <div className="container-custom text-center">
+        <div className="container-custom text-center px-4">
           <div className="max-w-4xl mx-auto animate-fade-in">
-            <h2 className="text-5xl font-bold mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8">
               Ready to Start Your Solar Journey?
             </h2>
-            <p className="text-xl mb-12 opacity-90">
+            <p className="text-base sm:text-lg md:text-xl mb-8 md:mb-12 opacity-90">
               Get a free, no-obligation assessment and see how much you can save with solar
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <Button 
-                className="bg-white text-solar-orange hover:bg-gray-100 text-lg px-12 py-6 hover-lift"
+                className="bg-white text-solar-orange hover:bg-gray-100 text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-6 hover-lift w-full sm:w-auto"
                 asChild
               >
                 <Link href="/quote">Get Free Quote</Link>
@@ -305,7 +305,7 @@ export default function Services() {
               
               <Button 
                 variant="outline"
-                className="border-white bg-transparent text-white hover:bg-white hover:text-solar-orange text-lg px-12 py-6 hover-lift"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-solar-orange text-base sm:text-lg px-8 sm:px-12 py-4 sm:py-6 hover-lift w-full sm:w-auto"
                 asChild
               >
                 <Link href="/contact">Schedule Consultation</Link>
