@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-hidden">
       {/* Modern Hero Section */}
-      <section className="relative h-screen flex items-center justify-center hero-parallax">
+      <section className="relative min-h-screen py-12 md:py-20 flex items-center justify-center hero-parallax">
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent"></div>
         
         {/* Floating particles animation */}
