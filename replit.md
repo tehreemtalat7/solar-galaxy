@@ -102,6 +102,38 @@ This is a full-stack web application for a solar energy company, built with Reac
 
 Preferred communication style: Simple, everyday language.
 
+## Mobile Responsiveness Standards
+
+The application follows consistent mobile-first responsive design patterns across all pages:
+
+### Text Sizing Patterns
+- **Hero Headings**: `text-3xl sm:text-4xl md:text-5xl` - Consistent across all pages
+- **Section Headings**: `text-3xl sm:text-4xl md:text-5xl` - Standard for all section titles
+- **Body Text**: `text-base sm:text-lg md:text-xl` - Readable on all screen sizes
+
+### Spacing Standards
+- **Hero Sections**: `py-12 md:py-20` - Consistent padding for all hero sections
+- **Regular Sections**: `section-padding` utility class
+- **Container Padding**: `px-4` for consistent horizontal spacing
+
+### Grid Layout Patterns
+- **Mobile-First**: All grids explicitly start with `grid-cols-1`
+- **Responsive Breakpoints**: 
+  - `sm:grid-cols-2` for tablets (640px+)
+  - `md:grid-cols-3` for desktops (768px+)
+  - `lg:grid-cols-2` or `lg:grid-cols-4` for large screens (1024px+)
+
+### Header/Navigation
+- **Logo Size**: `h-8 w-8 sm:h-10 sm:w-10` - Scaled for mobile
+- **Logo Text**: `text-lg sm:text-xl md:text-2xl` - Responsive typography
+- **Mobile Menu**: Slide-out navigation with `w-[280px] sm:w-[350px]`
+- **Touch Targets**: All buttons and links properly sized for mobile interaction
+
+### Form Optimization
+- **Input Grids**: `grid-cols-1 sm:grid-cols-2` - Stack on mobile, side-by-side on desktop
+- **Button Sizing**: `w-full sm:w-auto` - Full width on mobile, auto on desktop
+- **Touch-Friendly**: All form controls optimized for mobile interaction
+
 ## Changelog
 
 ```
@@ -117,4 +149,12 @@ Changelog:
   * Added floating particles and interactive hover effects
   * Improved spacing with modern section layouts
   * Added custom scrollbar styling
+- October 08, 2025. Comprehensive mobile responsiveness optimization:
+  * Normalized all hero headings to text-3xl sm:text-4xl md:text-5xl pattern
+  * Standardized hero section spacing to py-12 md:py-20 across all pages
+  * Implemented mobile-first grid layouts with explicit grid-cols-1 declarations
+  * Optimized header/navigation for mobile with responsive logo and menu sizing
+  * Enhanced form layouts for touch-friendly mobile interaction
+  * Ensured all cards and content stack properly on mobile devices
+  * Verified mobile responsiveness with e2e testing on iPhone 12 viewport
 ```
