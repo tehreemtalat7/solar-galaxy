@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Sun, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Sun, Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -18,12 +18,6 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/people/Solar-Galaxy/61566850044252/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-solar-orange transition-colors">
                 <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-solar-orange transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-solar-orange transition-colors">
-                <Linkedin className="h-5 w-5" />
               </a>
               <a href="https://www.instagram.com/solargalaxy.co/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-solar-orange transition-colors">
                 <Instagram className="h-5 w-5" />
