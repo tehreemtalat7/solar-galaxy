@@ -136,12 +136,17 @@ export default function Contact() {
               {/* Google Maps Integration */}
               <div className="mt-6 md:mt-8">
                 <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-3 md:mb-4">Find Us</h3>
-                <div className="bg-gray-200 rounded-lg h-48 sm:h-56 md:h-64 flex items-center justify-center">
-                  <div className="text-center px-4">
-                    <MapPin className="h-10 w-10 sm:h-12 sm:w-12 text-gray-400 mx-auto mb-3 md:mb-4" />
-                    <p className="text-sm sm:text-base text-gray-600">Interactive Google Map</p>
-                    <p className="text-xs sm:text-sm text-gray-500 mt-1">17-H Block, Commercial Area DHA Phase, Lahore</p>
-                  </div>
+                <div className="rounded-lg h-48 sm:h-56 md:h-64 overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13609.127858363898!2d74.39762!3d31.472847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190145ae6c83f7%3A0x7c2c7c6f50d0a0a0!2sDHA%20Phase%205%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1704700000000!5m2!1sen!2s"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Solar Galaxy Location - DHA Phase, Lahore"
+                  ></iframe>
                 </div>
               </div>
             </div>
