@@ -352,11 +352,10 @@ export default function Home() {
           </div>
 
           {/* Technology Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 text-center px-4">
             {[
               { stat: "16+", label: "Years Experience" },
               { stat: "3,000+", label: "Happy Customers" },
-              { stat: "6+", label: "Countries Served" },
               { stat: "100%", label: "Performance Rated" }
             ].map((item, index) => (
               <div key={index} className="animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
