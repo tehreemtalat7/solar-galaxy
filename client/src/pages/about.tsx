@@ -240,7 +240,7 @@ export default function About() {
             <Card className="hover-lift border-0 shadow-lg animate-slide-up overflow-hidden w-full max-w-sm">
               <div className="relative">
                 <img 
-                  src="https://via.placeholder.com/400x400/f97316/ffffff?text=CEO" 
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
                   alt="Mian Talat Mahmood"
                   className="w-full h-48 sm:h-56 md:h-64 object-cover"
                 />
