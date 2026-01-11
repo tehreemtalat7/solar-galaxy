@@ -3,10 +3,9 @@ import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calculator, MessageSquare, FileText, Mail, Users, TrendingUp } from "lucide-react";
+import { Calculator, MessageSquare, Mail, Users, TrendingUp } from "lucide-react";
 import TestimonialManagement from "@/components/admin/testimonial-management";
 import QuoteManagement from "@/components/admin/quote-management";
-import BlogManagement from "@/components/admin/blog-management";
 
 export default function Admin() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -65,7 +64,7 @@ export default function Admin() {
       {/* Dashboard Stats */}
       <section className="py-8">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             <Card>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
@@ -94,18 +93,6 @@ export default function Admin() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm text-gray-600">Blog Posts</div>
-                    <div className="text-2xl font-bold text-blue-600">--</div>
-                  </div>
-                  <FileText className="h-8 w-8 text-blue-600" />
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
                     <div className="text-sm text-gray-600">Testimonials</div>
                     <div className="text-2xl font-bold text-green-600">--</div>
                   </div>
@@ -125,10 +112,9 @@ export default function Admin() {
             </CardHeader>
             <CardContent>
               <Tabs defaultValue="quotes" className="w-full">
-                <TabsList className="grid w-full grid-cols-4">
+                <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="quotes">Quotes</TabsTrigger>
                   <TabsTrigger value="testimonials">Testimonials</TabsTrigger>
-                  <TabsTrigger value="blog">Blog Posts</TabsTrigger>
                   <TabsTrigger value="contacts">Contacts</TabsTrigger>
                 </TabsList>
                 
@@ -138,10 +124,6 @@ export default function Admin() {
                 
                 <TabsContent value="testimonials" className="mt-6">
                   <TestimonialManagement />
-                </TabsContent>
-                
-                <TabsContent value="blog" className="mt-6">
-                  <BlogManagement />
                 </TabsContent>
                 
                 <TabsContent value="contacts" className="mt-6">
