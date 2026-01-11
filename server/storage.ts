@@ -1,6 +1,5 @@
 import {
   users,
-  testimonials,
   quotes,
   blogPosts,
   projects,
@@ -19,7 +18,24 @@ import {
   type InsertContactSubmission,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, desc, and } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
+import * as fs from "fs";
+import * as path from "path";
+
+const TESTIMONIALS_FILE = path.join(process.cwd(), "data", "testimonials.json");
+
+function readTestimonialsFromFile(): Testimonial[] {
+  try {
+    const data = fs.readFileSync(TESTIMONIALS_FILE, "utf-8");
+    return JSON.parse(data);
+  } catch (error) {
+    return [];
+  }
+}
+
+function writeTestimonialsToFile(testimonials: Testimonial[]): void {
+  fs.writeFileSync(TESTIMONIALS_FILE, JSON.stringify(testimonials, null, 2));
+}
 
 // Interface for storage operations
 export interface IStorage {
@@ -84,36 +100,61 @@ export class DatabaseStorage implements IStorage {
     return user;
   }
 
-  // Testimonial operations
+  // Testimonial operations (JSON file-based)
   async getTestimonials(): Promise<Testimonial[]> {
-    return await db.select().from(testimonials).orderBy(desc(testimonials.createdAt));
+    const testimonials = readTestimonialsFromFile();
+    return testimonials.sort((a, b) => 
+      new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime()
+    );
   }
 
   async getActiveTestimonials(): Promise<Testimonial[]> {
-    return await db.select().from(testimonials)
-      .where(eq(testimonials.isActive, true))
-      .orderBy(desc(testimonials.createdAt));
+    const testimonials = readTestimonialsFromFile();
+    return testimonials
+      .filter(t => t.isActive)
+      .sort((a, b) => 
+        new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime()
+      );
   }
 
   async createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial> {
-    const [newTestimonial] = await db
-      .insert(testimonials)
-      .values(testimonial)
-      .returning();
+    const testimonials = readTestimonialsFromFile();
+    const maxId = testimonials.length > 0 ? Math.max(...testimonials.map(t => t.id)) : 0;
+    const newTestimonial: Testimonial = {
+      id: maxId + 1,
+      name: testimonial.name,
+      location: testimonial.location || null,
+      content: testimonial.content,
+      rating: testimonial.rating ?? 5,
+      isActive: testimonial.isActive ?? true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+    testimonials.push(newTestimonial);
+    writeTestimonialsToFile(testimonials);
     return newTestimonial;
   }
 
   async updateTestimonial(id: number, testimonial: Partial<InsertTestimonial>): Promise<Testimonial> {
-    const [updatedTestimonial] = await db
-      .update(testimonials)
-      .set({ ...testimonial, updatedAt: new Date() })
-      .where(eq(testimonials.id, id))
-      .returning();
-    return updatedTestimonial;
+    const testimonials = readTestimonialsFromFile();
+    const index = testimonials.findIndex(t => t.id === id);
+    if (index === -1) {
+      throw new Error("Testimonial not found");
+    }
+    const updated: Testimonial = {
+      ...testimonials[index],
+      ...testimonial,
+      updatedAt: new Date(),
+    };
+    testimonials[index] = updated;
+    writeTestimonialsToFile(testimonials);
+    return updated;
   }
 
   async deleteTestimonial(id: number): Promise<void> {
-    await db.delete(testimonials).where(eq(testimonials.id, id));
+    const testimonials = readTestimonialsFromFile();
+    const filtered = testimonials.filter(t => t.id !== id);
+    writeTestimonialsToFile(filtered);
   }
 
   // Quote operations
