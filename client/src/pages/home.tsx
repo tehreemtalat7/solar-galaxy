@@ -381,7 +381,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 px-4 max-w-4xl mx-auto">
             {[
               {
                 title: "Luxury Lahore Estate",
@@ -391,18 +391,11 @@ export default function Home() {
                 savings: "95% reduction"
               },
               {
-                title: "Karachi Office Complex",
+                title: "Lahore Business Plaza",
                 type: "Commercial", 
                 size: "200kW",
                 image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 savings: "PKR 1.5M/month"
-              },
-              {
-                title: "Islamabad Manufacturing",
-                type: "Industrial",
-                size: "500kW", 
-                image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-                savings: "Carbon neutral"
               }
             ].map((project, index) => (
               <Card key={index} className="hover-lift border-0 shadow-xl overflow-hidden animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
