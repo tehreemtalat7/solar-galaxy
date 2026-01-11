@@ -333,7 +333,7 @@ export default function Home() {
                   },
                   {
                     title: "Proven Track Record",
-                    description: "32,000+ satisfied customers across 6 countries since 2007",
+                    description: "3,000+ satisfied customers across 6 countries since 2007",
                     icon: <TrendingUp className="h-6 w-6" />
                   }
                 ].map((feature, index) => (
@@ -355,7 +355,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center px-4">
             {[
               { stat: "16+", label: "Years Experience" },
-              { stat: "32,000+", label: "Happy Customers" },
+              { stat: "3,000+", label: "Happy Customers" },
               { stat: "6+", label: "Countries Served" },
               { stat: "100%", label: "Performance Rated" }
             ].map((item, index) => (
