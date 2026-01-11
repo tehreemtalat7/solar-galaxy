@@ -6,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
 import { initGA } from "./lib/analytics";
 import { useAnalytics } from "./hooks/use-analytics";
-import { useAuth } from "./hooks/useAuth";
 
 // Pages
 import Home from "@/pages/home";
@@ -16,7 +15,6 @@ import Portfolio from "@/pages/portfolio";
 import Contact from "@/pages/contact";
 import Quote from "@/pages/quote";
 import NetMetering from "@/pages/net-metering";
-import Admin from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 
 // Layout components
@@ -41,7 +39,6 @@ function Router() {
           <Route path="/contact" component={Contact} />
           <Route path="/quote" component={Quote} />
           <Route path="/net-metering" component={NetMetering} />
-          <Route path="/admin" component={Admin} />
           <Route component={NotFound} />
         </Switch>
       </main>

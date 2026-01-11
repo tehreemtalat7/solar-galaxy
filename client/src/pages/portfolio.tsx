@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,62 +14,55 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Link } from "wouter";
-import type { Project } from "@shared/schema";
+
+const projects = [
+  {
+    id: 1,
+    title: "Luxury Residential Estate",
+    description: "50kW rooftop solar system for a modern estate in Lahore, featuring premium panels and smart monitoring.",
+    location: "Lahore, Pakistan",
+    systemSize: "50kW",
+    energyGenerated: "75,000 kWh/year",
+    type: "Residential",
+    completionDate: "2024-01-15",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 2,
+    title: "Green Tech Office Complex",
+    description: "200kW commercial solar installation with battery storage for a sustainable office building.",
+    location: "Lahore, Pakistan",
+    systemSize: "200kW",
+    energyGenerated: "300,000 kWh/year",
+    type: "Commercial",
+    completionDate: "2023-12-10",
+    image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 3,
+    title: "Sustainable Warehouse",
+    description: "500kW industrial solar array providing clean energy for logistics operations.",
+    location: "Lahore, Pakistan",
+    systemSize: "500kW",
+    energyGenerated: "750,000 kWh/year",
+    type: "Industrial",
+    completionDate: "2023-11-22",
+    image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    id: 4,
+    title: "Family Home Solar",
+    description: "15kW residential system with net metering, reducing energy bills by 95%.",
+    location: "Lahore, Pakistan",
+    systemSize: "15kW",
+    energyGenerated: "22,500 kWh/year",
+    type: "Residential",
+    completionDate: "2024-02-08",
+    image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  }
+];
 
 export default function Portfolio() {
-  const { data: projects, isLoading } = useQuery<Project[]>({
-    queryKey: ['/api/projects'],
-  });
-
-  // Sample featured projects if database is empty
-  const featuredProjects = [
-    {
-      id: 1,
-      title: "Luxury Residential Estate",
-      description: "50kW rooftop solar system for a modern estate in Lahore, featuring premium panels and smart monitoring.",
-      location: "Lahore, Pakistan",
-      systemSize: "50kW",
-      energyGenerated: "75,000 kWh/year",
-      type: "Residential",
-      completionDate: "2024-01-15",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 2,
-      title: "Green Tech Office Complex",
-      description: "200kW commercial solar installation with battery storage for a sustainable office building.",
-      location: "Lahore, Pakistan",
-      systemSize: "200kW",
-      energyGenerated: "300,000 kWh/year",
-      type: "Commercial",
-      completionDate: "2023-12-10",
-      image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 3,
-      title: "Sustainable Warehouse",
-      description: "500kW industrial solar array providing clean energy for logistics operations.",
-      location: "Lahore, Pakistan",
-      systemSize: "500kW",
-      energyGenerated: "750,000 kWh/year",
-      type: "Industrial",
-      completionDate: "2023-11-22",
-      image: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: 4,
-      title: "Family Home Solar",
-      description: "15kW residential system with net metering, reducing energy bills by 95%.",
-      location: "Lahore, Pakistan",
-      systemSize: "15kW",
-      energyGenerated: "22,500 kWh/year",
-      type: "Residential",
-      completionDate: "2024-02-08",
-      image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-    }
-  ];
-
-  const displayProjects = projects && projects.length > 0 ? projects : featuredProjects;
 
   const getTypeColor = (type: string) => {
     switch (type.toLowerCase()) {
@@ -141,22 +133,8 @@ export default function Portfolio() {
             </p>
           </div>
 
-          {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
-              {[...Array(6)].map((_, index) => (
-                <Card key={index} className="animate-pulse">
-                  <div className="h-64 bg-gray-200 rounded-t-lg"></div>
-                  <CardContent className="p-6">
-                    <div className="h-4 bg-gray-200 rounded mb-4"></div>
-                    <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4">
-              {displayProjects.map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4">
+              {projects.map((project, index) => (
                 <Card key={project.id} className="hover-lift border-0 shadow-2xl overflow-hidden animate-slide-up" style={{animationDelay: `${index * 0.2}s`}}>
                   <div className="relative h-64 sm:h-72 md:h-80">
                     <img 
@@ -211,8 +189,7 @@ export default function Portfolio() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-          )}
+          </div>
         </div>
       </section>
 

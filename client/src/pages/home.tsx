@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,18 +22,68 @@ import {
 } from "lucide-react";
 import { Link } from "wouter";
 import { trackEvent } from "@/lib/analytics";
-import type { Testimonial, Project } from "@shared/schema";
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Ahmed Khan",
+    location: "Lahore, Pakistan",
+    content: "Solar Galaxy transformed our home energy completely. We've cut our electricity bills by 80% and the installation was seamless. Their team was professional and explained everything clearly.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Fatima Malik",
+    location: "Lahore, Pakistan",
+    content: "Best investment we ever made for our business. The commercial solar system has reduced our operational costs significantly. Highly recommend Solar Galaxy to everyone!",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Muhammad Usman",
+    location: "Lahore, Pakistan",
+    content: "Exceptional service from start to finish. The net metering setup was handled perfectly and now we're actually earning from excess power. Thank you Solar Galaxy!",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "Ayesha Siddiqui",
+    location: "Lahore, Pakistan",
+    content: "Our factory is now running entirely on solar power. The 200kW system installed by Solar Galaxy pays for itself every month. Amazing ROI and great after-sales support.",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Hassan Raza",
+    location: "Lahore, Pakistan",
+    content: "Living in Lahore with its extreme summers, solar was a no-brainer. Solar Galaxy delivered exactly what they promised. Our AC runs all day without worrying about bills!",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "Sana Tariq",
+    location: "Lahore, Pakistan",
+    content: "Very impressed with the quality of panels and inverter. The monitoring app shows exactly how much we're generating. Solar Galaxy's team is knowledgeable and trustworthy.",
+    rating: 4,
+  },
+  {
+    id: 7,
+    name: "Ali Hussain",
+    location: "Lahore, Pakistan",
+    content: "Finally free from load shedding! Our 10kW system with battery backup keeps our home powered 24/7. Solar Galaxy made the entire process hassle-free.",
+    rating: 5,
+  },
+  {
+    id: 8,
+    name: "Zainab Ahmed",
+    location: "Lahore, Pakistan",
+    content: "Great experience working with Solar Galaxy for our textile unit. The team understood our power requirements and designed a perfect system. Electricity costs down by 75%!",
+    rating: 5,
+  }
+];
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
-  
-  const { data: testimonials } = useQuery<Testimonial[]>({
-    queryKey: ['/api/testimonials'],
-  });
-
-  const { data: projects } = useQuery<Project[]>({
-    queryKey: ['/api/projects'],
-  });
 
   const scrollLeft = () => {
     if (scrollRef.current) {
