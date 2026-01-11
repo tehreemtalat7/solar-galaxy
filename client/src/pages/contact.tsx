@@ -1,24 +1,19 @@
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { insertContactSubmissionSchema } from "@shared/schema";
-import { z } from "zod";
 
-const contactFormSchema = insertContactSubmissionSchema.extend({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
+interface ContactFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 export default function Contact() {
   const { toast } = useToast();
@@ -30,48 +25,32 @@ export default function Contact() {
     message: "",
   });
 
-  const submitContactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      await apiRequest('POST', '/api/contact', data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    try {
-      const validatedData = contactFormSchema.parse(formData);
-      submitContactMutation.mutate(validatedData);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const firstError = error.errors[0];
-        toast({
-          title: "Validation Error",
-          description: firstError.message,
-          variant: "destructive",
-        });
-      }
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
     }
+
+    const subject = encodeURIComponent(`Contact Inquiry from ${formData.firstName} ${formData.lastName}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=solargalaxy.co@gmail.com&su=${subject}&body=${body}`, '_blank');
+    
+    toast({
+      title: "Opening Gmail",
+      description: "Please send the email to complete your inquiry.",
+    });
   };
 
   const handleInputChange = (field: keyof ContactFormData, value: string) => {
@@ -197,7 +176,7 @@ export default function Contact() {
                       <Input 
                         id="phone"
                         type="tel"
-                        value={formData.phone || ""}
+                        value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
                         placeholder="0333 1234567"
                       />
@@ -218,9 +197,8 @@ export default function Contact() {
                     <Button 
                       type="submit" 
                       className="w-full bg-solar-orange hover:bg-solar-orange-light text-white"
-                      disabled={submitContactMutation.isPending}
                     >
-                      {submitContactMutation.isPending ? "Sending..." : "Send Message"}
+                      Send Message via Gmail
                     </Button>
                   </form>
                 </CardContent>
