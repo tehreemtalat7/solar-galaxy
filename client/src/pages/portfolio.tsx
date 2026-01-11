@@ -234,7 +234,7 @@ export default function Portfolio() {
                 type: "Residential",
                 icon: <Home className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16" />,
                 description: "Custom solar solutions for homeowners looking to reduce energy costs and increase property value",
-                projects: "1,800+ Projects",
+                projects: "2,200+ Projects",
                 color: "text-solar-orange",
                 bgColor: "bg-orange-50"
               },
@@ -242,7 +242,7 @@ export default function Portfolio() {
                 type: "Commercial", 
                 icon: <Building className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16" />,
                 description: "Scalable solar systems for businesses aiming to reduce operational costs and carbon footprint",
-                projects: "600+ Projects",
+                projects: "800+ Projects",
                 color: "text-solar-green",
                 bgColor: "bg-green-50"
               },
@@ -250,7 +250,7 @@ export default function Portfolio() {
                 type: "Industrial",
                 icon: <Zap className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16" />,
                 description: "Large-scale solar installations for manufacturing and industrial facilities",
-                projects: "100+ Projects", 
+                projects: "200+ Projects", 
                 color: "text-blue-600",
                 bgColor: "bg-blue-50"
               }
