@@ -236,43 +236,22 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 px-4">
-            {[
-              {
-                name: "Mian Talat Mahmood",
-                position: "Chief Executive Officer",
-                image: "https://via.placeholder.com/400x400/f97316/ffffff?text=CEO",
-                description: "15+ years leading renewable energy initiatives"
-              },
-              {
-                name: "Sarah Chen",
-                position: "Head of Installation",
-                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-                description: "NABCEP certified with 2,000+ installations"
-              },
-              {
-                name: "David Thompson",
-                position: "Customer Success Manager",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-                description: "Ensuring exceptional customer experiences"
-              }
-            ].map((member, index) => (
-              <Card key={index} className="hover-lift border-0 shadow-lg animate-slide-up overflow-hidden" style={{animationDelay: `${index * 0.2}s`}}>
-                <div className="relative">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-48 sm:h-56 md:h-64 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                </div>
-                <CardContent className="p-6 md:p-8 text-center">
-                  <h3 className="text-lg sm:text-xl font-bold text-neutral-dark mb-2">{member.name}</h3>
-                  <p className="text-sm sm:text-base text-solar-orange font-semibold mb-3 md:mb-4">{member.position}</p>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-600">{member.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="flex justify-center px-4">
+            <Card className="hover-lift border-0 shadow-lg animate-slide-up overflow-hidden w-full max-w-sm">
+              <div className="relative">
+                <img 
+                  src="https://via.placeholder.com/400x400/f97316/ffffff?text=CEO" 
+                  alt="Mian Talat Mahmood"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              </div>
+              <CardContent className="p-6 md:p-8 text-center">
+                <h3 className="text-lg sm:text-xl font-bold text-neutral-dark mb-2">Mian Talat Mahmood</h3>
+                <p className="text-sm sm:text-base text-solar-orange font-semibold mb-3 md:mb-4">Chief Executive Officer</p>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600">15+ years leading renewable energy initiatives</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
