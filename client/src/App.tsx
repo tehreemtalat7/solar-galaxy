@@ -33,7 +33,7 @@ function Router() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 pt-16 md:pt-20">
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />

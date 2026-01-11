@@ -26,13 +26,13 @@ export default function Blog() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-solar-green to-solar-green-light">
+      <section className="py-12 md:py-20 bg-gradient-to-r from-solar-green to-solar-green-light">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               Solar Energy Blog
             </h1>
-            <p className="text-xl text-white">
+            <p className="text-base sm:text-lg md:text-xl text-white">
               Stay informed about solar energy trends, government incentives, and maintenance tips from our experts.
             </p>
           </div>
@@ -40,10 +40,10 @@ export default function Blog() {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           {posts && posts.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {posts.map((post) => (
                 <Card key={post.id} className="hover:shadow-lg transition-shadow">
                   <div className="h-48 bg-gray-200 rounded-t-lg overflow-hidden">
@@ -69,7 +69,7 @@ export default function Blog() {
                       </Badge>
                       <div className="flex items-center text-sm text-gray-500">
                         <Calendar className="h-4 w-4 mr-1" />
-                        {format(new Date(post.createdAt), 'MMM dd, yyyy')}
+                        {post.createdAt ? format(new Date(post.createdAt), 'MMM dd, yyyy') : 'Recent'}
                       </div>
                     </div>
                     

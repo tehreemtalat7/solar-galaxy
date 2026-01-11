@@ -91,7 +91,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-neutral-dark via-neutral-dark/90 to-neutral-dark text-white relative overflow-hidden">
         <div className="absolute inset-0">
