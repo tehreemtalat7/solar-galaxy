@@ -138,14 +138,14 @@ export default function Contact() {
                 <h3 className="text-base sm:text-lg font-semibold text-neutral-dark mb-3 md:mb-4">Find Us</h3>
                 <div className="rounded-lg h-48 sm:h-56 md:h-64 overflow-hidden shadow-lg">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13609.127858363898!2d74.39762!3d31.472847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190145ae6c83f7%3A0x7c2c7c6f50d0a0a0!2sDHA%20Phase%205%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1704700000000!5m2!1sen!2s"
+                    src="https://maps.google.com/maps?q=31.4823,74.3957&z=16&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Solar Galaxy Location - DHA Phase, Lahore"
+                    title="Solar Galaxy Location - 17-H Block, DHA Phase 1, Lahore"
                   ></iframe>
                 </div>
               </div>
