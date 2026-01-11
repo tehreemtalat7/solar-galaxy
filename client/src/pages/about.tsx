@@ -239,9 +239,9 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 px-4">
             {[
               {
-                name: "Michael Rodriguez",
+                name: "Mian Talat Mahmood",
                 position: "Chief Executive Officer",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+                image: "https://via.placeholder.com/400x400/f97316/ffffff?text=CEO",
                 description: "15+ years leading renewable energy initiatives"
               },
               {
