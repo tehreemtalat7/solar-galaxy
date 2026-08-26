@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(22, 100%, 58%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Solar brand colors */
+  --solar-orange: hsl(22, 100%, 58%);
+  --solar-orange-light: hsl(22, 100%, 68%);
+  --solar-green: hsl(158, 92%, 35%);
+  --solar-green-light: hsl(158, 92%, 45%);
+  --neutral-dark: hsl(215, 25%, 27%);
+  --neutral-light: hsl(210, 40%, 98%);
+  
+  /* Modern gradient backgrounds */
+  --gradient-primary: linear-gradient(135deg, hsl(22, 100%, 58%) 0%, hsl(158, 92%, 35%) 100%);
+  --gradient-dark: linear-gradient(135deg, hsl(215, 25%, 27%) 0%, hsl(215, 25%, 18%) 100%);
+  --gradient-light: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+  
+  /* Glass morphism */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(22, 100%, 58%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-solar-orange {
+    color: var(--solar-orange);
+  }
+  
+  .text-solar-orange-light {
+    color: var(--solar-orange-light);
+  }
+  
+  .text-solar-green {
+    color: var(--solar-green);
+  }
+  
+  .text-solar-green-light {
+    color: var(--solar-green-light);
+  }
+  
+  .bg-solar-orange {
+    background-color: var(--solar-orange);
+  }
+  
+  .bg-solar-orange-light {
+    background-color: var(--solar-orange-light);
+  }
+  
+  .bg-solar-green {
+    background-color: var(--solar-green);
+  }
+  
+  .bg-solar-green-light {
+    background-color: var(--solar-green-light);
+  }
+  
+  .bg-neutral-dark {
+    background-color: var(--neutral-dark);
+  }
+  
+  .bg-neutral-light {
+    background-color: var(--neutral-light);
+  }
+  
+  .text-neutral-dark {
+    color: var(--neutral-dark);
+  }
+  
+  .text-neutral-light {
+    color: var(--neutral-light);
+  }
+  
+  .border-solar-orange {
+    border-color: var(--solar-orange);
+  }
+  
+  .border-solar-green {
+    border-color: var(--solar-green);
+  }
+  
+  .hover\:bg-solar-orange:hover {
+    background-color: var(--solar-orange);
+  }
+  
+  .hover\:bg-solar-orange-light:hover {
+    background-color: var(--solar-orange-light);
+  }
+  
+  .hover\:bg-solar-green:hover {
+    background-color: var(--solar-green);
+  }
+  
+  .hover\:bg-solar-green-light:hover {
+    background-color: var(--solar-green-light);
+  }
+  
+  .hover\:text-solar-orange:hover {
+    color: var(--solar-orange);
+  }
+  
+  .hover\:text-solar-green:hover {
+    color: var(--solar-green);
+  }
+  
+  /* Hide scrollbar completely */
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+}
+
+@layer components {
+  /* Glass morphism utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  /* Modern animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Hover effects */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hover-glow {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hover-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .hover-glow:hover::before {
+    left: 100%;
+  }
+  
+  /* Modern button styles */
+  .btn-modern {
+    @apply relative overflow-hidden text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:scale-105;
+    background: linear-gradient(135deg, var(--solar-orange) 0%, var(--solar-green) 100%);
+  }
+  
+  .btn-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-modern:hover::before {
+    left: 100%;
+  }
+  
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background: linear-gradient(135deg, var(--solar-orange) 0%, var(--solar-green) 100%);
+  }
+  
+  /* Hero section with parallax */
+  .hero-parallax {
+    background: linear-gradient(135deg, rgba(22, 100, 58, 0.9), rgba(22, 100, 58, 0.7)), 
+                url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Section spacing */
+  .section-padding {
+    @apply py-24;
+  }
+  
+  /* Container with max width */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210, 40%, 98%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(22, 100%, 58%);
+}
